@@ -1,0 +1,1058 @@
+Participant,Time_min,Age,Sex,Degree,Program,L1,TestScore,AWEQ,Frame,Variant,Response,Past_participle,Incomplete
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Is.that1,Adj-that,possible,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Is.that2,Adj-that,probable,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Is.that3,Adj-that,impossible,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Is.that4,Adj-that,improbable,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Is.that5,Adj-that,feasible,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Is.that6,Adj-that,likely,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Is.that7,Adj-that,questionable,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Is.that8,Adj-that,interesting,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Is.that9,Adj-that,disappointing,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Is.that10,Adj-that,proven,1,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Is.that11,Adj-that,shown,1,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Is.that12,Adj-that,demonstrate,0,1
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Seem.to1,Adj-to,difficult,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Seem.to2,Adj-to,strange,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Seem.to3,Adj-to,wise,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Seem.to4,Adj-to,good,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Seem.to5,Adj-to,improbable,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Seem.to6,Adj-to,unlikely,0,0
+1,11.433,21,Male,MS,Linguistics,English,NA,5,Seem.to7,Adj-to,likely,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that1,Adj-that,clear,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that2,Adj-that,evident,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that3,Adj-that,apparent,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that4,Adj-that,unclear,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that5,Adj-that,said,1,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that6,Adj-that,confirmed,1,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that7,Adj-that,stated,1,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that8,Adj-that,certain,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that9,Adj-that,uncertain,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that10,Adj-that,obvious,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that11,Adj-that,decided,1,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that12,Adj-that,thought,1,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.that13,Adj-that,told,1,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.to1,Adj-to,possible,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.to2,Adj-to,likely,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.to3,Adj-to,sure,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.to4,Adj-to,impossible,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.to5,Adj-to,unlikely,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.to6,Adj-to,able,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.to7,Adj-to,unable,0,0
+2,10.967,35,Female,MS,TESOL,English,NA,3.25,Is.to8,Adj-to,evident,0,0
+3,15,42,Male,Doctoral,Environmental Health,English,NA,3.666666667,Is.that1,Adj-that,possible,0,0
+3,15,42,Male,Doctoral,Environmental Health,English,NA,3.666666667,Is.that2,Adj-that,expected,1,0
+3,15,42,Male,Doctoral,Environmental Health,English,NA,3.666666667,Is.that3,Adj-that,shown,1,0
+3,15,42,Male,Doctoral,Environmental Health,English,NA,3.666666667,Is.that4,Adj-that,reasoned,1,0
+3,15,42,Male,Doctoral,Environmental Health,English,NA,3.666666667,Is.that5,Adj-that,predicted,1,0
+3,15,42,Male,Doctoral,Environmental Health,English,NA,3.666666667,Is.to1,Adj-to,reasonable,0,0
+3,15,42,Male,Doctoral,Environmental Health,English,NA,3.666666667,Is.to2,Adj-to,expected,1,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that1,Adj-that,TRUE,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that2,Adj-that,FALSE,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that3,Adj-that,good,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that4,Adj-that,okay,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that5,Adj-that,fine,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that6,Adj-that,sad,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that7,Adj-that,happy,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that8,Adj-that,interesting,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that9,Adj-that,ridiculous,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that10,Adj-that,silly,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that11,Adj-that,awful,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that12,Adj-that,terrible,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that13,Adj-that,good,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Is.that14,Adj-that,bad,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Seem.to1,Adj-to,good,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Seem.to2,Adj-to,just,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Seem.to3,Adj-to,fair,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Seem.to4,Adj-to,bad,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Seem.to5,Adj-to,unfair,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Seem.to6,Adj-to,mean,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Seem.to7,Adj-to,kind,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Seem.to8,Adj-to,cruel,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Seem.to9,Adj-to,nice,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Seem.to10,Adj-to,greedy,0,0
+4,13.083,25,Male,MS,Social Work,English,NA,3.181818182,Seem.to11,Adj-to,generous,0,0
+5,12.717,28,Female,Doctoral,Linguistics ,English,NA,3,Seem.that1,Adj-that,likely,0,0
+5,12.717,28,Female,Doctoral,Linguistics ,English,NA,3,Seem.that2,Adj-that,probable,0,0
+5,12.717,28,Female,Doctoral,Linguistics ,English,NA,3,Seem.that3,Adj-that,unlikely ,0,0
+5,12.717,28,Female,Doctoral,Linguistics ,English,NA,3,Seem.that4,Adj-that,possible,0,0
+5,12.717,28,Female,Doctoral,Linguistics ,English,NA,3,Seem.that5,Adj-that,questionable ,0,0
+5,12.717,28,Female,Doctoral,Linguistics ,English,NA,3,Seem.to1,Adj-to,questionable ,0,0
+5,12.717,28,Female,Doctoral,Linguistics ,English,NA,3,Seem.to2,Adj-to,obvious ,0,0
+5,12.717,28,Female,Doctoral,Linguistics ,English,NA,3,Seem.to3,Adj-to,suggestive ,0,0
+5,12.717,28,Female,Doctoral,Linguistics ,English,NA,3,Seem.to4,Adj-to,possible,0,0
+6,11.95,37,Male,MS,Finance,English,NA,2.833333333,Seem.that1,Adj-that,unfair,0,0
+6,11.95,37,Male,MS,Finance,English,NA,2.833333333,Seem.that2,Adj-that,evident,0,0
+6,11.95,37,Male,MS,Finance,English,NA,2.833333333,Seem.that3,Adj-that,important,0,0
+6,11.95,37,Male,MS,Finance,English,NA,2.833333333,Seem.that4,Adj-that,natural,0,0
+6,11.95,37,Male,MS,Finance,English,NA,2.833333333,Is.to1,Adj-to,simple,0,0
+6,11.95,37,Male,MS,Finance,English,NA,2.833333333,Is.to2,Adj-to,expected,1,0
+6,11.95,37,Male,MS,Finance,English,NA,2.833333333,Is.to3,Adj-to,unfair,0,0
+6,11.95,37,Male,MS,Finance,English,NA,2.833333333,Is.to4,Adj-to,interesting,0,0
+6,11.95,37,Male,MS,Finance,English,NA,2.833333333,Is.to5,Adj-to,difficult,0,0
+6,11.95,37,Male,MS,Finance,English,NA,2.833333333,Is.to6,Adj-to,crucial,0,0
+6,11.95,37,Male,MS,Finance,English,NA,2.833333333,Is.to7,Adj-to,trivial,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.that1,Adj-that,useful,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.that2,Adj-that,helpful,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.that3,Adj-that,ridiculous,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.that4,Adj-that,obvious,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.that5,Adj-that,apparent,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.that6,Adj-that,funny,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.that7,Adj-that,sad,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.that8,Adj-that,crazy,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.to1,Adj-to,obvious,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.to2,Adj-to,ridicuous,0,1
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.to3,Adj-to,apparent,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.to4,Adj-to,crazy,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.to5,Adj-to,silly,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.to6,Adj-to,funny,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.to7,Adj-to,good,0,0
+7,14.367,47,Female,Doctoral,Nursing,English,NA,3.722222222,Seem.to8,Adj-to,lively,0,0
+8,171.583,21,Male,MS,Human Biology,English,NA,1.833333333,Seem.that1,Adj-that,obvious,0,0
+8,171.583,21,Male,MS,Human Biology,English,NA,1.833333333,Seem.that2,Adj-that,practical,0,0
+8,171.583,21,Male,MS,Human Biology,English,NA,1.833333333,Seem.that3,Adj-that,intuitive,0,0
+8,171.583,21,Male,MS,Human Biology,English,NA,1.833333333,Seem.that4,Adj-that,logical,0,0
+8,171.583,21,Male,MS,Human Biology,English,NA,1.833333333,Seem.that5,Adj-that,important,0,0
+8,171.583,21,Male,MS,Human Biology,English,NA,1.833333333,Is.to1,Adj-to,important,0,0
+8,171.583,21,Male,MS,Human Biology,English,NA,1.833333333,Is.to2,Adj-to,vital,0,0
+8,171.583,21,Male,MS,Human Biology,English,NA,1.833333333,Is.to3,Adj-to,necessary,0,0
+8,171.583,21,Male,MS,Human Biology,English,NA,1.833333333,Is.to4,Adj-to,logical,0,0
+9,11.967,56,Female,Doctoral,Nursing,English,NA,3.25,Seem.that1,Adj-that,suspicious,0,0
+9,11.967,56,Female,Doctoral,Nursing,English,NA,3.25,Seem.that2,Adj-that,questionable ,0,0
+9,11.967,56,Female,Doctoral,Nursing,English,NA,3.25,Seem.that3,Adj-that,intriguing ,0,0
+9,11.967,56,Female,Doctoral,Nursing,English,NA,3.25,Seem.that4,Adj-that,humorous ,0,0
+9,11.967,56,Female,Doctoral,Nursing,English,NA,3.25,Seem.that5,Adj-that,fortunate ,0,0
+9,11.967,56,Female,Doctoral,Nursing,English,NA,3.25,Is.to1,Adj-to,superior ,0,0
+9,11.967,56,Female,Doctoral,Nursing,English,NA,3.25,Is.to2,Adj-to,inferior,0,0
+9,11.967,56,Female,Doctoral,Nursing,English,NA,3.25,Is.to3,Adj-to,good,0,0
+9,11.967,56,Female,Doctoral,Nursing,English,NA,3.25,Is.to4,Adj-to,preferable ,0,0
+9,11.967,56,Female,Doctoral,Nursing,English,NA,3.25,Is.to5,Adj-to,innate ,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Is.that1,Adj-that,likely,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Is.that2,Adj-that,unlikely,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Is.that3,Adj-that,improbable,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Is.that4,Adj-that,probable,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Is.that5,Adj-that,certain,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Is.that6,Adj-that,conclusive,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Is.that7,Adj-that,proven,1,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Is.that8,Adj-that,unwelcome,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Is.that9,Adj-that,evident,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Is.that10,Adj-that,accepted,1,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Is.that11,Adj-that,implied,1,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Is.that12,Adj-that,infer,0,1
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to1,Adj-to,absurd,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to2,Adj-to,unconventional,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to3,Adj-to,likely,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to4,Adj-to,obvious,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to5,Adj-to,unexpected,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to6,Adj-to,improbable,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to7,Adj-to,standard,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to8,Adj-to,prone,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to9,Adj-to,predisposed,1,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to10,Adj-to,dangerous,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to11,Adj-to,risky,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to12,Adj-to,implied,1,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to13,Adj-to,inevitable,0,0
+10,10.5,26,Female,Doctoral,English,English,NA,5,Seem.to14,Adj-to,undesirable,0,0
+11,16.533,24,Female,Doctoral,Neuroscience,English,NA,2.933333333,Seem.that1,Adj-that,prudent,0,0
+11,16.533,24,Female,Doctoral,Neuroscience,English,NA,2.933333333,Seem.that2,Adj-that,important,0,0
+11,16.533,24,Female,Doctoral,Neuroscience,English,NA,2.933333333,Seem.that3,Adj-that,critical,0,0
+11,16.533,24,Female,Doctoral,Neuroscience,English,NA,2.933333333,Seem.that4,Adj-that,apparent,0,0
+11,16.533,24,Female,Doctoral,Neuroscience,English,NA,2.933333333,Seem.that5,Adj-that,obvious,0,0
+11,16.533,24,Female,Doctoral,Neuroscience,English,NA,2.933333333,Seem.that6,Adj-that,clear,0,0
+11,16.533,24,Female,Doctoral,Neuroscience,English,NA,2.933333333,Seem.to1,Adj-to,important,0,0
+11,16.533,24,Female,Doctoral,Neuroscience,English,NA,2.933333333,Seem.to2,Adj-to,valuable,0,0
+11,16.533,24,Female,Doctoral,Neuroscience,English,NA,2.933333333,Seem.to3,Adj-to,critical,0,0
+11,16.533,24,Female,Doctoral,Neuroscience,English,NA,2.933333333,Seem.to4,Adj-to,worthwhile,0,0
+11,16.533,24,Female,Doctoral,Neuroscience,English,NA,2.933333333,Seem.to5,Adj-to,necessary,0,0
+11,16.533,24,Female,Doctoral,Neuroscience,English,NA,2.933333333,Seem.to6,Adj-to,prudent,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Is.that1,Adj-that,imperative,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Is.that2,Adj-that,vital,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Is.that3,Adj-that,necessary,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Is.that4,Adj-that,prudent,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Is.that5,Adj-that,unfortunate,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Is.that6,Adj-that,unhelpful,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Is.that7,Adj-that,useful,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Is.that8,Adj-that,given,1,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Seem.to1,Adj-to,useful,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Seem.to2,Adj-to,important,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Seem.to3,Adj-to,vital,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Seem.to4,Adj-to,prudent,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Seem.to5,Adj-to,possible,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Seem.to6,Adj-to,impossible,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Seem.to7,Adj-to,inadvisable,0,0
+12,12.767,26,Female,Doctoral,Medicine,English,NA,1.777777778,Seem.to8,Adj-to,advisable,0,0
+13,67.5,36,Male,MS,International Policy,English,NA,2,Seem.that1,Adj-that,likely,0,0
+13,67.5,36,Male,MS,International Policy,English,NA,2,Is.to1,Adj-to,adjacent ,0,0
+14,15.55,60,Male,MS,Biophysics,English,NA,2.6875,Seem.that1,Adj-that,unlikely,0,0
+14,15.55,60,Male,MS,Biophysics,English,NA,2.6875,Seem.that2,Adj-that,probable,0,0
+14,15.55,60,Male,MS,Biophysics,English,NA,2.6875,Seem.that3,Adj-that,mostly,0,1
+14,15.55,60,Male,MS,Biophysics,English,NA,2.6875,Seem.that4,Adj-that,improbable,0,0
+14,15.55,60,Male,MS,Biophysics,English,NA,2.6875,Seem.that5,Adj-that,unrealistic,0,0
+14,15.55,60,Male,MS,Biophysics,English,NA,2.6875,Is.to1,Adj-to,easy,0,0
+14,15.55,60,Male,MS,Biophysics,English,NA,2.6875,Is.to2,Adj-to,hard,0,0
+14,15.55,60,Male,MS,Biophysics,English,NA,2.6875,Is.to3,Adj-to,contrary,0,0
+14,15.55,60,Male,MS,Biophysics,English,NA,2.6875,Is.to4,Adj-to,obvious,0,0
+14,15.55,60,Male,MS,Biophysics,English,NA,2.6875,Is.to5,Adj-to,relative,0,0
+14,15.55,60,Male,MS,Biophysics,English,NA,2.6875,Is.to6,Adj-to,fundamental,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Seem.that1,Adj-that,further ,0,1
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Seem.that2,Adj-that,likely,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Seem.that3,Adj-that,arguably ,0,1
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Seem.that4,Adj-that,necessary,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Seem.that5,Adj-that,unnecessary,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Seem.that6,Adj-that,optimistic,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Seem.that7,Adj-that,relative,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Seem.that8,Adj-that,normal,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Seem.that9,Adj-that,common,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Seem.that10,Adj-that,unlikely,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Is.to1,Adj-to,unlikely,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Is.to2,Adj-to,likely,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Is.to3,Adj-to,optimistic,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Is.to4,Adj-to,common,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Is.to5,Adj-to,disappointing,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Is.to6,Adj-to,relative,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Is.to7,Adj-to,related,1,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Is.to8,Adj-to,subjective,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Is.to9,Adj-to,objective,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Is.to10,Adj-to,necessary,0,0
+15,13.15,30,Male,MS,Linguistics,English,NA,3.8,Is.to11,Adj-to,unnecessary,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Seem.that1,Adj-that,prudent,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Seem.that2,Adj-that,good,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Seem.that3,Adj-that,right,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Seem.that4,Adj-that,correct,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Seem.that5,Adj-that,incorrect,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Seem.that6,Adj-that,sloppy,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Seem.that7,Adj-that,serendipitous,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Is.to1,Adj-to,prudent,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Is.to2,Adj-to,good,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Is.to3,Adj-to,questionable,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Is.to4,Adj-to,excellent,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Is.to5,Adj-to,ponderous,0,0
+16,17.6,25,Female,Doctoral,Linguistics,English,NA,5,Is.to6,Adj-to,relevant,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Seem.that1,Adj-that,evident,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Seem.that2,Adj-that,obvious,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Seem.that3,Adj-that,dubious,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Seem.that4,Adj-that,uncertain,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Seem.that5,Adj-that,possible,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Seem.that6,Adj-that,definite,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Seem.that7,Adj-that,probable,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Seem.that8,Adj-that,clear,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Is.to1,Adj-to,possible,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Is.to2,Adj-to,easy,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Is.to3,Adj-to,hard,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Is.to4,Adj-to,difficult,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Is.to5,Adj-to,challenging,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Is.to6,Adj-to,important,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Is.to7,Adj-to,unnecessary,0,0
+17,10.767,26,Female,MS,Economics,English,NA,3.277777778,Is.to8,Adj-to,crucial,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Is.that1,Adj-that,interesting,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Is.that2,Adj-that,understandable,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Is.that3,Adj-that,inconceivable,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Is.that4,Adj-that,logical,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Is.that5,Adj-that,illogical,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Is.that6,Adj-that,beautiful,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Is.that7,Adj-that,disheartening,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Is.that8,Adj-that,disappointing,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Is.that9,Adj-that,unsurprising,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Is.that10,Adj-that,surprising,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Is.that11,Adj-that,uninteresting,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Seem.to1,Adj-to,obvious,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Seem.to2,Adj-to,spurious,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Seem.to3,Adj-to,specious,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Seem.to4,Adj-to,petty,0,0
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Seem.to5,Adj-to,overall,0,1
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Seem.to6,Adj-to,undeniably,0,1
+18,11.217,25,Male,Doctoral,Anthropology,English,NA,2.833333333,Seem.to7,Adj-to,underwhelmingly,0,1
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.that1,Adj-that,imperative,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.that2,Adj-that,significant,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.that3,Adj-that,important,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.that4,Adj-that,necessary,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.that5,Adj-that,required,1,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.that6,Adj-that,well-understood,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.that7,Adj-that,shown,1,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.that8,Adj-that,proven,1,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.that9,Adj-that,demonstrated,1,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.to1,Adj-to,difficult,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.to2,Adj-to,easy,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.to3,Adj-to,irresponsible,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.to4,Adj-to,naive,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.to5,Adj-to,early,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.to6,Adj-to,insufficient,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.to7,Adj-to,necessary,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.to8,Adj-to,sufficient,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.to9,Adj-to,logical,0,0
+19,11.017,33,Female,MS,Second Language Acquisition,English,NA,4.375,Is.to10,Adj-to,illogical,0,0
+20,12.917,30,Female,Doctoral,Second Language Acquisition,English,NA,2.888888889,Seem.that1,Adj-that,obvious,0,0
+20,12.917,30,Female,Doctoral,Second Language Acquisition,English,NA,2.888888889,Seem.that2,Adj-that,plain,0,0
+20,12.917,30,Female,Doctoral,Second Language Acquisition,English,NA,2.888888889,Seem.that3,Adj-that,evident,0,0
+20,12.917,30,Female,Doctoral,Second Language Acquisition,English,NA,2.888888889,Seem.to1,Adj-to,responsible,0,0
+20,12.917,30,Female,Doctoral,Second Language Acquisition,English,NA,2.888888889,Seem.to2,Adj-to,sensible,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.that1,Adj-that,important,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.that2,Adj-that,odd,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.that3,Adj-that,strange,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.that4,Adj-that,appropriate,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.that5,Adj-that,inappropriate,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.that6,Adj-that,fitting,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.that7,Adj-that,exciting,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.that8,Adj-that,unimpressive,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.to1,Adj-to,unimportant,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.to2,Adj-to,important,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.to3,Adj-to,silly,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.to4,Adj-to,right,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.to5,Adj-to,wrong,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.to6,Adj-to,essential,0,0
+21,11.467,32,Male,Doctoral,Second Language Acquisition,English,NA,3.857142857,Seem.to7,Adj-to,careless,0,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Is.that1,Adj-that,clear,0,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Is.that2,Adj-that,sure,0,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Is.that3,Adj-that,supposed,1,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Is.that4,Adj-that,estimated,1,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Is.that5,Adj-that,proven,1,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Is.that6,Adj-that,guessed,1,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Is.that7,Adj-that,claimed,1,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Is.that8,Adj-that,reported,1,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Is.that9,Adj-that,said,1,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Seem.to1,Adj-to,obvious,0,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Seem.to2,Adj-to,clear,0,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Seem.to3,Adj-to,repetitive,0,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Seem.to4,Adj-to,silly,0,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Seem.to5,Adj-to,annoying,0,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Seem.to6,Adj-to,clever,0,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Seem.to7,Adj-to,thoughtful,0,0
+22,217.4,32,Male,MS,Persian,English,NA,3,Seem.to8,Adj-to,optimistic,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.that1,Adj-that,known,1,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.that2,Adj-that,arguable,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.that3,Adj-that,incontrovertible,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.that4,Adj-that,uncontestable,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.that5,Adj-that,clear,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.that6,Adj-that,obvious,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.that7,Adj-that,demonstrable,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.that8,Adj-that,implied,1,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.that9,Adj-that,implicit,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.that10,Adj-that,explicit,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.that11,Adj-that,presupposed,1,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.that12,Adj-that,supposed,1,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.to1,Adj-to,sufficient,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.to2,Adj-to,acceptable,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.to3,Adj-to,inconsequential,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.to4,Adj-to,unethical,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.to5,Adj-to,ethical,0,0
+23,17.9,42,Male,Doctoral,Linguistics,English,NA,2.588235294,Is.to6,Adj-to,useful,0,0
+24,24.533,25,Female,Doctoral,Nursing,English,NA,3.666666667,Seem.that1,Adj-that,understood,1,0
+24,24.533,25,Female,Doctoral,Nursing,English,NA,3.666666667,Seem.that2,Adj-that,important,0,0
+24,24.533,25,Female,Doctoral,Nursing,English,NA,3.666666667,Seem.that3,Adj-that,necessary,0,0
+24,24.533,25,Female,Doctoral,Nursing,English,NA,3.666666667,Seem.that4,Adj-that,critical,0,0
+24,24.533,25,Female,Doctoral,Nursing,English,NA,3.666666667,Is.to1,Adj-to,important,0,0
+24,24.533,25,Female,Doctoral,Nursing,English,NA,3.666666667,Is.to2,Adj-to,critical,0,0
+24,24.533,25,Female,Doctoral,Nursing,English,NA,3.666666667,Is.to3,Adj-to,necessary,0,0
+24,24.533,25,Female,Doctoral,Nursing,English,NA,3.666666667,Is.to4,Adj-to,vital,0,0
+24,24.533,25,Female,Doctoral,Nursing,English,NA,3.666666667,Is.to5,Adj-to,imperative,0,0
+24,24.533,25,Female,Doctoral,Nursing,English,NA,3.666666667,Is.to6,Adj-to,essential,0,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Is.that1,Adj-that,recommended,1,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Is.that2,Adj-that,thought,1,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Is.that3,Adj-that,understood,1,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Is.that4,Adj-that,important,0,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Is.that5,Adj-that,unlikely,0,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Is.that6,Adj-that,likely,0,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Is.that7,Adj-that,unusual ,0,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Is.that8,Adj-that,proposed,1,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Is.that9,Adj-that,argued,1,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Is.that10,Adj-that,understandable,0,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Seem.to1,Adj-to,likely,0,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Seem.to2,Adj-to,relevant,0,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Seem.to3,Adj-to,important,0,0
+25,11.95,28,Male,Doctoral,Linguistics,English,NA,3.529411765,Seem.to4,Adj-to,reasonable,0,0
+26,23.817,28,Female,Doctoral,Linguistics,English,NA,4.25,Seem.that1,Adj-that,arguable,0,0
+26,23.817,28,Female,Doctoral,Linguistics,English,NA,4.25,Seem.that2,Adj-that,clear,0,0
+26,23.817,28,Female,Doctoral,Linguistics,English,NA,4.25,Seem.that3,Adj-that,ideal,0,0
+26,23.817,28,Female,Doctoral,Linguistics,English,NA,4.25,Seem.that4,Adj-that,questionable,0,0
+26,23.817,28,Female,Doctoral,Linguistics,English,NA,4.25,Is.to1,Adj-to,good,0,0
+26,23.817,28,Female,Doctoral,Linguistics,English,NA,4.25,Is.to2,Adj-to,ideal,0,0
+26,23.817,28,Female,Doctoral,Linguistics,English,NA,4.25,Is.to3,Adj-to,easy,0,0
+26,23.817,28,Female,Doctoral,Linguistics,English,NA,4.25,Is.to4,Adj-to,difficult,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Is.that1,Adj-that,clear,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Is.that2,Adj-that,evident,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Is.that3,Adj-that,obvious,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Is.that4,Adj-that,essential,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Is.that5,Adj-that,necessary,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Is.that6,Adj-that,important,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Is.that7,Adj-that,vital,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Is.that8,Adj-that,required,1,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Seem.to1,Adj-to,essential,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Seem.to2,Adj-to,important,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Seem.to3,Adj-to,obvious,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Seem.to4,Adj-to,clear,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Seem.to5,Adj-to,necessary,0,0
+27,11.6,28,Female,Doctoral,Linguistics,English,NA,3.266666667,Seem.to6,Adj-to,ridiculous,0,0
+28,25.183,36,Male,Doctoral,Linguistics,English,NA,4.416666667,Seem.that1,Adj-that,evident,0,0
+28,25.183,36,Male,Doctoral,Linguistics,English,NA,4.416666667,Seem.that2,Adj-that,obvious,0,0
+28,25.183,36,Male,Doctoral,Linguistics,English,NA,4.416666667,Seem.that3,Adj-that,surprising,0,0
+28,25.183,36,Male,Doctoral,Linguistics,English,NA,4.416666667,Seem.that4,Adj-that,outstanding,0,0
+28,25.183,36,Male,Doctoral,Linguistics,English,NA,4.416666667,Seem.that5,Adj-that,outrageous,0,0
+28,25.183,36,Male,Doctoral,Linguistics,English,NA,4.416666667,Seem.that6,Adj-that,noteworthy,0,0
+28,25.183,36,Male,Doctoral,Linguistics,English,NA,4.416666667,Seem.that7,Adj-that,trivial,0,0
+28,25.183,36,Male,Doctoral,Linguistics,English,NA,4.416666667,Is.to1,Adj-to,futile,0,0
+28,25.183,36,Male,Doctoral,Linguistics,English,NA,4.416666667,Is.to2,Adj-to,necessary,0,0
+28,25.183,36,Male,Doctoral,Linguistics,English,NA,4.416666667,Is.to3,Adj-to,important,0,0
+28,25.183,36,Male,Doctoral,Linguistics,English,NA,4.416666667,Is.to4,Adj-to,obvious,0,0
+28,25.183,36,Male,Doctoral,Linguistics,English,NA,4.416666667,Is.to5,Adj-to,helpful,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Is.that1,Adj-that,imperative,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Is.that2,Adj-that,important,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Is.that3,Adj-that,crucial,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Is.that4,Adj-that,fundamental,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Is.that5,Adj-that,necessary,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Is.that6,Adj-that,fascinating,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Is.that7,Adj-that,interesting,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Seem.to1,Adj-to,necessary,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Seem.to2,Adj-to,difficult,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Seem.to3,Adj-to,easy,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Seem.to4,Adj-to,crucial,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Seem.to5,Adj-to,fundamental,0,0
+29,11.65,25,Male,Doctoral,Spanish and Portuguese,English,NA,4,Seem.to6,Adj-to,imperative,0,0
+30,12.233,26,Female,Doctoral,Spanish Linguistics,English,NA,2.555555556,Seem.that1,Adj-that,likely,0,0
+30,12.233,26,Female,Doctoral,Spanish Linguistics,English,NA,2.555555556,Seem.that2,Adj-that,unlikely,0,0
+30,12.233,26,Female,Doctoral,Spanish Linguistics,English,NA,2.555555556,Seem.that3,Adj-that,strange,0,0
+30,12.233,26,Female,Doctoral,Spanish Linguistics,English,NA,2.555555556,Seem.that4,Adj-that,certain,0,0
+30,12.233,26,Female,Doctoral,Spanish Linguistics,English,NA,2.555555556,Seem.to1,Adj-to,FALSE,0,0
+30,12.233,26,Female,Doctoral,Spanish Linguistics,English,NA,2.555555556,Seem.to2,Adj-to,precipitated,1,0
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.that1,Adj-that,understood,1,0
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.that2,Adj-that,logical,0,0
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.that3,Adj-that,illogical,0,0
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.that4,Adj-that,noted,1,0
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.that5,Adj-that,proposed,1,0
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.that6,Adj-that,measured,1,0
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.to1,Adj-to,logical,0,0
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.to2,Adj-to,important,0,0
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.to3,Adj-to,necessary,0,0
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.to4,Adj-to,wrong,0,0
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.to5,Adj-to,right,0,0
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.to6,Adj-to,forward,0,1
+31,16.567,29,Female,Doctoral,International Development,English,NA,2.5,Is.to7,Adj-to,rash,0,0
+32,10.717,25,Male,Doctoral,Computer Science,English,NA,3.9,Is.that1,Adj-that,imperative,0,0
+32,10.717,25,Male,Doctoral,Computer Science,English,NA,3.9,Is.that2,Adj-that,notable,0,0
+32,10.717,25,Male,Doctoral,Computer Science,English,NA,3.9,Is.that3,Adj-that,interesting,0,0
+32,10.717,25,Male,Doctoral,Computer Science,English,NA,3.9,Is.that4,Adj-that,dubious,0,0
+32,10.717,25,Male,Doctoral,Computer Science,English,NA,3.9,Is.to1,Adj-to,important,0,0
+32,10.717,25,Male,Doctoral,Computer Science,English,NA,3.9,Is.to2,Adj-to,natural,0,0
+32,10.717,25,Male,Doctoral,Computer Science,English,NA,3.9,Is.to3,Adj-to,incorrect,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that1,Adj-that,likely,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that2,Adj-that,certain,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that3,Adj-that,probable,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that4,Adj-that,nice,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that5,Adj-that,good,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that6,Adj-that,bad,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that7,Adj-that,fortuate,0,1
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that8,Adj-that,good,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that9,Adj-that,unfair,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that10,Adj-that,wise,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that11,Adj-that,important,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that12,Adj-that,necessary,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Is.that13,Adj-that,sufficient,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Seem.to1,Adj-to,easy,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Seem.to2,Adj-to,hard,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Seem.to3,Adj-to,managable,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Seem.to4,Adj-to,normal,0,0
+33,15.8,25,Female,Doctoral,Computer Science,English,NA,1.823529412,Seem.to5,Adj-to,likely,0,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.that1,Adj-that,understood,1,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.that2,Adj-that,stated,1,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.that3,Adj-that,argued,1,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.that4,Adj-that,presented,1,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.that5,Adj-that,referenced,1,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.that6,Adj-that,cited,1,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.that7,Adj-that,claimed,1,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.that8,Adj-that,asserted,1,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.that9,Adj-that,clear,0,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.to1,Adj-to,relevant,0,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.to2,Adj-to,irrelevant,0,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.to3,Adj-to,necessary,0,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.to4,Adj-to,detrimental,0,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.to5,Adj-to,aggressive,0,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.to6,Adj-to,controversial,0,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.to7,Adj-to,important,0,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.to8,Adj-to,key,0,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.to9,Adj-to,unnecessary,0,0
+34,38.5,27,Female,MS,Education Policy,English,NA,3.555555556,Is.to10,Adj-to,necessary,0,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.that1,Adj-that,important ,0,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.that2,Adj-that,reasonable,0,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.that3,Adj-that,essential ,0,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.that4,Adj-that,assumed,1,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.that5,Adj-that,argued,1,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.that6,Adj-that,believed,1,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.that7,Adj-that,likely ,0,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.that8,Adj-that,probable,0,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.that9,Adj-that,necessary,0,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.to1,Adj-to,important,0,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.to2,Adj-to,reasonable,0,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.to3,Adj-to,pertinent,0,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.to4,Adj-to,essential,0,0
+35,12.35,23,Male,MS,Linguistics,English,NA,5,Is.to5,Adj-to,necessary,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.that1,Adj-that,clear,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.that2,Adj-that,evident,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.that3,Adj-that,reasonable,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.that4,Adj-that,doubtful,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.that5,Adj-that,regrettable,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.that6,Adj-that,promising,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.that7,Adj-that,auspicious,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.that8,Adj-that,detrimental,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.to1,Adj-to,reasonable,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.to2,Adj-to,amenable,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.to3,Adj-to,counterintuitive,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.to4,Adj-to,actionable,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.to5,Adj-to,promising,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.to6,Adj-to,foreboding,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.to7,Adj-to,rational,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.to8,Adj-to,logical,0,0
+36,10.483,25,Male,MS,Psychology,English,NA,3.333333333,Seem.to9,Adj-to,valid,0,0
+37,12.567,25,Female,MS,Linguistics,English,NA,2.5,Is.that1,Adj-that,clear,0,0
+37,12.567,25,Female,MS,Linguistics,English,NA,2.5,Is.that2,Adj-that,uncertain,0,0
+37,12.567,25,Female,MS,Linguistics,English,NA,2.5,Is.that3,Adj-that,problematic,0,0
+37,12.567,25,Female,MS,Linguistics,English,NA,2.5,Is.that4,Adj-that,known,1,0
+37,12.567,25,Female,MS,Linguistics,English,NA,2.5,Is.that5,Adj-that,acknowledged,1,0
+37,12.567,25,Female,MS,Linguistics,English,NA,2.5,Is.that6,Adj-that,assumed,1,0
+37,12.567,25,Female,MS,Linguistics,English,NA,2.5,Seem.to1,Adj-to,misguided,0,0
+37,12.567,25,Female,MS,Linguistics,English,NA,2.5,Seem.to2,Adj-to,wise,0,0
+37,12.567,25,Female,MS,Linguistics,English,NA,2.5,Seem.to3,Adj-to,problematic,0,0
+37,12.567,25,Female,MS,Linguistics,English,NA,2.5,Seem.to4,Adj-to,understandable,0,0
+37,12.567,25,Female,MS,Linguistics,English,NA,2.5,Seem.to5,Adj-to,unwise,0,0
+38,11.017,23,Female,MS,Biotechnology,English,NA,4,Seem.that1,Adj-that,siginificant,0,1
+38,11.017,23,Female,MS,Biotechnology,English,NA,4,Seem.that2,Adj-that,intersting,0,1
+38,11.017,23,Female,MS,Biotechnology,English,NA,4,Seem.that3,Adj-that,alarming,0,0
+38,11.017,23,Female,MS,Biotechnology,English,NA,4,Seem.that4,Adj-that,worrying,0,0
+38,11.017,23,Female,MS,Biotechnology,English,NA,4,Seem.that5,Adj-that,common,0,0
+38,11.017,23,Female,MS,Biotechnology,English,NA,4,Seem.to1,Adj-to,similar ,0,0
+38,11.017,23,Female,MS,Biotechnology,English,NA,4,Seem.to2,Adj-to,interesting,0,0
+38,11.017,23,Female,MS,Biotechnology,English,NA,4,Seem.to3,Adj-to,significant,0,0
+38,11.017,23,Female,MS,Biotechnology,English,NA,4,Seem.to4,Adj-to,important,0,0
+38,11.017,23,Female,MS,Biotechnology,English,NA,4,Seem.to5,Adj-to,reasonable,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that1,Adj-that,true ,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that2,Adj-that,untrue,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that3,Adj-that,FALSE,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that4,Adj-that,frightening,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that5,Adj-that,terrifying,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that6,Adj-that,unbelievable,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that7,Adj-that,unfortunate,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that8,Adj-that,mind-blowing,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that9,Adj-that,insane,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that10,Adj-that,ridiculous,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that11,Adj-that,lovely,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that12,Adj-that,amazing,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Is.that13,Adj-that,fascinating,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Seem.to1,Adj-to,cruel,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Seem.to2,Adj-to,unfair,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Seem.to3,Adj-to,fair,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Seem.to4,Adj-to,unkind,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Seem.to5,Adj-to,helpful,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Seem.to6,Adj-to,unhelpful,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Seem.to7,Adj-to,important,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Seem.to8,Adj-to,crucial,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Seem.to9,Adj-to,necessary,0,0
+39,10.517,NA,Female,Doctoral,Linguistics,English,NA,4.055555556,Seem.to10,Adj-to,unnecessary,0,0
+40,22.033,27,Female,MS,TESOL,English,NA,4.125,Seem.that1,Adj-that,reasonable,0,0
+40,22.033,27,Female,MS,TESOL,English,NA,4.125,Seem.that2,Adj-that,logical,0,0
+40,22.033,27,Female,MS,TESOL,English,NA,4.125,Seem.that3,Adj-that,helpful,0,0
+40,22.033,27,Female,MS,TESOL,English,NA,4.125,Is.to1,Adj-to,helpful,0,0
+40,22.033,27,Female,MS,TESOL,English,NA,4.125,Is.to2,Adj-to,reasonable,0,0
+40,22.033,27,Female,MS,TESOL,English,NA,4.125,Is.to3,Adj-to,logical,0,0
+40,22.033,27,Female,MS,TESOL,English,NA,4.125,Is.to4,Adj-to,possible,0,0
+40,22.033,27,Female,MS,TESOL,English,NA,4.125,Is.to5,Adj-to,likely,0,0
+41,12.2,29,Male,MS,TESOL,English,NA,3.153846154,Seem.that1,Adj-that,pertinent ,0,0
+41,12.2,29,Male,MS,TESOL,English,NA,3.153846154,Seem.that2,Adj-that,noteworthy,0,0
+41,12.2,29,Male,MS,TESOL,English,NA,3.153846154,Is.to1,Adj-to,unwarranted,0,0
+41,12.2,29,Male,MS,TESOL,English,NA,3.153846154,Is.to2,Adj-to,premature,0,0
+41,12.2,29,Male,MS,TESOL,English,NA,3.153846154,Is.to3,Adj-to,rash,0,0
+41,12.2,29,Male,MS,TESOL,English,NA,3.153846154,Is.to4,Adj-to,important,0,0
+41,12.2,29,Male,MS,TESOL,English,NA,3.153846154,Is.to5,Adj-to,essential,0,0
+41,12.2,29,Male,MS,TESOL,English,NA,3.153846154,Is.to6,Adj-to,uncommon,0,0
+41,12.2,29,Male,MS,TESOL,English,NA,3.153846154,Is.to7,Adj-to,relevant,0,0
+42,13.017,55,Female,MS,TESOL,English,NA,2.833333333,Seem.that1,Adj-that,obvious,0,0
+42,13.017,55,Female,MS,TESOL,English,NA,2.833333333,Seem.that2,Adj-that,logical,0,0
+42,13.017,55,Female,MS,TESOL,English,NA,2.833333333,Seem.that3,Adj-that,natural,0,0
+42,13.017,55,Female,MS,TESOL,English,NA,2.833333333,Seem.to1,Adj-to,likely,0,0
+42,13.017,55,Female,MS,TESOL,English,NA,2.833333333,Seem.to2,Adj-to,unlikely,0,0
+42,13.017,55,Female,MS,TESOL,English,NA,2.833333333,Seem.to3,Adj-to,logical,0,0
+42,13.017,55,Female,MS,TESOL,English,NA,2.833333333,Seem.to4,Adj-to,illogical,0,0
+42,13.017,55,Female,MS,TESOL,English,NA,2.833333333,Seem.to5,Adj-to,simple,0,0
+42,13.017,55,Female,MS,TESOL,English,NA,2.833333333,Seem.to6,Adj-to,complicated,0,0
+43,16.483,25,Female,MS,Education,English,NA,3.666666667,Seem.that1,Adj-that,true ,0,0
+43,16.483,25,Female,MS,Education,English,NA,3.666666667,Seem.that2,Adj-that,wrong,0,0
+43,16.483,25,Female,MS,Education,English,NA,3.666666667,Seem.that3,Adj-that,inaccurate,0,0
+43,16.483,25,Female,MS,Education,English,NA,3.666666667,Seem.that4,Adj-that,accurate ,0,0
+43,16.483,25,Female,MS,Education,English,NA,3.666666667,Seem.that5,Adj-that,probable,0,0
+43,16.483,25,Female,MS,Education,English,NA,3.666666667,Seem.that6,Adj-that,likely ,0,0
+43,16.483,25,Female,MS,Education,English,NA,3.666666667,Seem.that7,Adj-that,understandable ,0,0
+43,16.483,25,Female,MS,Education,English,NA,3.666666667,Is.to1,Adj-to,helpful ,0,0
+43,16.483,25,Female,MS,Education,English,NA,3.666666667,Is.to2,Adj-to,accurate,0,0
+43,16.483,25,Female,MS,Education,English,NA,3.666666667,Is.to3,Adj-to,wrong,0,0
+44,13.85,29,Female,MS,Development Policy,English,NA,5,Is.that1,Adj-that,true ,0,0
+44,13.85,29,Female,MS,Development Policy,English,NA,5,Is.that2,Adj-that,FALSE,0,0
+44,13.85,29,Female,MS,Development Policy,English,NA,5,Is.that3,Adj-that,critical,0,0
+44,13.85,29,Female,MS,Development Policy,English,NA,5,Is.that4,Adj-that,important,0,0
+44,13.85,29,Female,MS,Development Policy,English,NA,5,Is.that5,Adj-that,key,0,0
+44,13.85,29,Female,MS,Development Policy,English,NA,5,Is.that6,Adj-that,desirable,0,0
+44,13.85,29,Female,MS,Development Policy,English,NA,5,Is.that7,Adj-that,unfortunate,0,0
+44,13.85,29,Female,MS,Development Policy,English,NA,5,Seem.to1,Adj-to,early,0,0
+44,13.85,29,Female,MS,Development Policy,English,NA,5,Seem.to2,Adj-to,challenging,0,0
+44,13.85,29,Female,MS,Development Policy,English,NA,5,Seem.to3,Adj-to,unclear,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Seem.that1,Adj-that,odds,0,1
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Seem.that2,Adj-that,weird,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Seem.that3,Adj-that,unusual ,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Seem.that4,Adj-that,general ,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Seem.that5,Adj-that,likely ,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Seem.that6,Adj-that,fine,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Seem.that7,Adj-that,important,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Is.to1,Adj-to,easy,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Is.to2,Adj-to,difficult ,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Is.to3,Adj-to,hard,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Is.to4,Adj-to,good,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Is.to5,Adj-to,good,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Is.to6,Adj-to,important ,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Is.to7,Adj-to,interesting ,0,0
+45,12.683,28,Male,Doctoral,Industrial Hygiene,Thai,110,3.333333333,Is.to8,Adj-to,mandated,1,0
+46,12.967,28,Female,MS,Pharmaceutical Sciences,Thai,102,3.882352941,Seem.that1,Adj-that,reasonable,0,0
+46,12.967,28,Female,MS,Pharmaceutical Sciences,Thai,102,3.882352941,Seem.that2,Adj-that,possible,0,0
+46,12.967,28,Female,MS,Pharmaceutical Sciences,Thai,102,3.882352941,Seem.that3,Adj-that,understandable,0,0
+46,12.967,28,Female,MS,Pharmaceutical Sciences,Thai,102,3.882352941,Is.to1,Adj-to,difficult,0,0
+46,12.967,28,Female,MS,Pharmaceutical Sciences,Thai,102,3.882352941,Is.to2,Adj-to,easy,0,0
+46,12.967,28,Female,MS,Pharmaceutical Sciences,Thai,102,3.882352941,Is.to3,Adj-to,possible,0,0
+46,12.967,28,Female,MS,Pharmaceutical Sciences,Thai,102,3.882352941,Is.to4,Adj-to,crucial,0,0
+46,12.967,28,Female,MS,Pharmaceutical Sciences,Thai,102,3.882352941,Is.to5,Adj-to,acceptable,0,0
+47,15.15,25,Female,MS,Arab Studies,Thai,96,2.666666667,Seem.that1,Adj-that,likely,0,0
+47,15.15,25,Female,MS,Arab Studies,Thai,96,2.666666667,Seem.that2,Adj-that,unlikely,0,0
+47,15.15,25,Female,MS,Arab Studies,Thai,96,2.666666667,Seem.that3,Adj-that,implausible,0,0
+47,15.15,25,Female,MS,Arab Studies,Thai,96,2.666666667,Seem.that4,Adj-that,challenging,0,0
+47,15.15,25,Female,MS,Arab Studies,Thai,96,2.666666667,Seem.that5,Adj-that,unclear,0,0
+47,15.15,25,Female,MS,Arab Studies,Thai,96,2.666666667,Seem.to1,Adj-to,likely,0,0
+47,15.15,25,Female,MS,Arab Studies,Thai,96,2.666666667,Seem.to2,Adj-to,positive,0,0
+47,15.15,25,Female,MS,Arab Studies,Thai,96,2.666666667,Seem.to3,Adj-to,impossible,0,0
+47,15.15,25,Female,MS,Arab Studies,Thai,96,2.666666667,Seem.to4,Adj-to,implausible,0,0
+47,15.15,25,Female,MS,Arab Studies,Thai,96,2.666666667,Seem.to5,Adj-to,inevitable,0,0
+47,15.15,25,Female,MS,Arab Studies,Thai,96,2.666666667,Seem.to6,Adj-to,prone,0,0
+48,80.7,25,Female,MS,Law,Thai,109,1.555555556,Seem.that1,Adj-that,reasonable,0,0
+48,80.7,25,Female,MS,Law,Thai,109,1.555555556,Seem.that2,Adj-that,impossible,0,0
+48,80.7,25,Female,MS,Law,Thai,109,1.555555556,Seem.to1,Adj-to,unreasonable,0,0
+48,80.7,25,Female,MS,Law,Thai,109,1.555555556,Seem.to2,Adj-to,irrelavant,0,1
+49,18.667,29,Female,Doctoral,Media and Information Studies ,Thai,103,3.555555556,Is.that1,Adj-that,possible,0,0
+49,18.667,29,Female,Doctoral,Media and Information Studies ,Thai,103,3.555555556,Is.that2,Adj-that,surprising,0,0
+49,18.667,29,Female,Doctoral,Media and Information Studies ,Thai,103,3.555555556,Is.that3,Adj-that,interesting,0,0
+49,18.667,29,Female,Doctoral,Media and Information Studies ,Thai,103,3.555555556,Is.that4,Adj-that,conclusive,0,0
+49,18.667,29,Female,Doctoral,Media and Information Studies ,Thai,103,3.555555556,Is.that5,Adj-that,confirmed,1,0
+49,18.667,29,Female,Doctoral,Media and Information Studies ,Thai,103,3.555555556,Seem.to1,Adj-to,surprising,0,0
+49,18.667,29,Female,Doctoral,Media and Information Studies ,Thai,103,3.555555556,Seem.to2,Adj-to,inappropriate,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that1,Adj-that,obvious,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that2,Adj-that,faithful,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that3,Adj-that,loyal,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that4,Adj-that,solid,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that5,Adj-that,clear,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that6,Adj-that,valuable,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that7,Adj-that,affordable,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that8,Adj-that,functional,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that9,Adj-that,aesthetic,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that10,Adj-that,true ,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that11,Adj-that,FALSE,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that12,Adj-that,fail,0,1
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Seem.that13,Adj-that,superstitious,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to1,Adj-to,hard,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to2,Adj-to,easy,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to3,Adj-to,fair,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to4,Adj-to,obvious,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to5,Adj-to,strange,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to6,Adj-to,weird,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to7,Adj-to,bold,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to8,Adj-to,stressful,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to9,Adj-to,much,0,1
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to10,Adj-to,nice,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to11,Adj-to,agreeable,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to12,Adj-to,funny,0,0
+50,13.1,33,Female,Doctoral,Architecture,Thai,101,2.666666667,Is.to13,Adj-to,amuzed,0,1
+51,20.3,30,Female,MS,Human Resources,Thai,NA,3.9,Seem.that1,Adj-that,obvious,0,0
+51,20.3,30,Female,MS,Human Resources,Thai,NA,3.9,Seem.that2,Adj-that,clear,0,0
+51,20.3,30,Female,MS,Human Resources,Thai,NA,3.9,Seem.that3,Adj-that,justified,1,0
+51,20.3,30,Female,MS,Human Resources,Thai,NA,3.9,Seem.that4,Adj-that,right,0,0
+51,20.3,30,Female,MS,Human Resources,Thai,NA,3.9,Seem.that5,Adj-that,wrong,0,0
+51,20.3,30,Female,MS,Human Resources,Thai,NA,3.9,Is.to1,Adj-to,clear,0,0
+51,20.3,30,Female,MS,Human Resources,Thai,NA,3.9,Is.to2,Adj-to,obvious,0,0
+51,20.3,30,Female,MS,Human Resources,Thai,NA,3.9,Is.to3,Adj-to,important,0,0
+51,20.3,30,Female,MS,Human Resources,Thai,NA,3.9,Is.to4,Adj-to,obliged,1,0
+52,16.6,25,Female,MS,International Relations,Thai,110,3.571428571,Seem.that1,Adj-that,possible,0,0
+52,16.6,25,Female,MS,International Relations,Thai,110,3.571428571,Seem.that2,Adj-that,impossible,0,0
+52,16.6,25,Female,MS,International Relations,Thai,110,3.571428571,Seem.that3,Adj-that,correct,0,0
+52,16.6,25,Female,MS,International Relations,Thai,110,3.571428571,Seem.that4,Adj-that,incorrect,0,0
+52,16.6,25,Female,MS,International Relations,Thai,110,3.571428571,Seem.to1,Adj-to,great,0,0
+52,16.6,25,Female,MS,International Relations,Thai,110,3.571428571,Seem.to2,Adj-to,amazing ,0,0
+52,16.6,25,Female,MS,International Relations,Thai,110,3.571428571,Seem.to3,Adj-to,fun,0,0
+52,16.6,25,Female,MS,International Relations,Thai,110,3.571428571,Seem.to4,Adj-to,lovely,0,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.that1,Adj-that,claimed,1,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.that2,Adj-that,stated,1,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.that3,Adj-that,suggested,1,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.that4,Adj-that,pointed,1,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.that5,Adj-that,assumed,1,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.that6,Adj-that,interesting,0,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.that7,Adj-that,strange ,0,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.to1,Adj-to,important,0,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.to2,Adj-to,wrong,0,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.to3,Adj-to,questionable,0,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.to4,Adj-to,unusual,0,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.to5,Adj-to,usual,0,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.to6,Adj-to,typical,0,0
+53,61.717,25,Female,MS,International Relations,Thai,109,2.857142857,Is.to7,Adj-to,odd,0,0
+54,28.717,35,Female,Doctoral,Packaging,Thai,83,3.388888889,Is.that1,Adj-that,indicated,1,0
+54,28.717,35,Female,Doctoral,Packaging,Thai,83,3.388888889,Is.that2,Adj-that,emphasized,1,0
+54,28.717,35,Female,Doctoral,Packaging,Thai,83,3.388888889,Is.that3,Adj-that,inferred,1,0
+54,28.717,35,Female,Doctoral,Packaging,Thai,83,3.388888889,Is.that4,Adj-that,recommended,1,0
+54,28.717,35,Female,Doctoral,Packaging,Thai,83,3.388888889,Is.to1,Adj-to,crucial,0,0
+54,28.717,35,Female,Doctoral,Packaging,Thai,83,3.388888889,Is.to2,Adj-to,important,0,0
+54,28.717,35,Female,Doctoral,Packaging,Thai,83,3.388888889,Is.to3,Adj-to,simple,0,0
+54,28.717,35,Female,Doctoral,Packaging,Thai,83,3.388888889,Is.to4,Adj-to,critical,0,0
+55,12.133,26,Male,Doctoral,Chemistry,Thai,102,5,Is.that1,Adj-that,important,0,0
+55,12.133,26,Male,Doctoral,Chemistry,Thai,102,5,Is.that2,Adj-that,essential,0,0
+55,12.133,26,Male,Doctoral,Chemistry,Thai,102,5,Is.that3,Adj-that,vital,0,0
+55,12.133,26,Male,Doctoral,Chemistry,Thai,102,5,Is.that4,Adj-that,useful,0,0
+55,12.133,26,Male,Doctoral,Chemistry,Thai,102,5,Is.that5,Adj-that,interesting,0,0
+55,12.133,26,Male,Doctoral,Chemistry,Thai,102,5,Is.that6,Adj-that,convincing,0,0
+55,12.133,26,Male,Doctoral,Chemistry,Thai,102,5,Is.to1,Adj-to,important,0,0
+55,12.133,26,Male,Doctoral,Chemistry,Thai,102,5,Is.to2,Adj-to,essential,0,0
+55,12.133,26,Male,Doctoral,Chemistry,Thai,102,5,Is.to3,Adj-to,useful,0,0
+55,12.133,26,Male,Doctoral,Chemistry,Thai,102,5,Is.to4,Adj-to,good,0,0
+55,12.133,26,Male,Doctoral,Chemistry,Thai,102,5,Is.to5,Adj-to,appropriate,0,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Is.that1,Adj-that,imperative,0,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Is.that2,Adj-that,important,0,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Is.that3,Adj-that,significant,0,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Is.that4,Adj-that,obligatory,0,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Is.that5,Adj-that,suggested,1,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Is.that6,Adj-that,advised,1,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Is.that7,Adj-that,preferable ,0,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Seem.to1,Adj-to,premature,0,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Seem.to2,Adj-to,important,0,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Seem.to3,Adj-to,imperative,0,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Seem.to4,Adj-to,difficult,0,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Seem.to5,Adj-to,important,0,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Seem.to6,Adj-to,essential,0,0
+56,14.783,34,Female,Doctoral,Applied Linguistics,Thai,114,2.277777778,Seem.to7,Adj-to,elementary,0,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Is.that1,Adj-that,argued,1,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Is.that2,Adj-that,explained,1,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Is.that3,Adj-that,calculated,1,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Is.that4,Adj-that,estimated,1,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Is.that5,Adj-that,informed,1,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Is.that6,Adj-that,seen,1,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Is.that7,Adj-that,reported,1,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Is.that8,Adj-that,showed,0,1
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Is.that9,Adj-that,demonstrated,1,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Seem.to1,Adj-to,important,0,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Seem.to2,Adj-to,significant,0,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Seem.to3,Adj-to,fascinating,0,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Seem.to4,Adj-to,probable,0,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Seem.to5,Adj-to,unlikely,0,0
+57,20.1,35,Male,Doctoral,English,Thai,111,2.941176471,Seem.to6,Adj-to,likely,0,0
+58,120.067,26,Female,MS,Design for Social Innovation,Thai,93,3,Seem.that1,Adj-that,surprisingly,0,1
+58,120.067,26,Female,MS,Design for Social Innovation,Thai,93,3,Seem.that2,Adj-that,interesting,0,0
+58,120.067,26,Female,MS,Design for Social Innovation,Thai,93,3,Seem.that3,Adj-that,unbelievable,0,0
+58,120.067,26,Female,MS,Design for Social Innovation,Thai,93,3,Is.to1,Adj-to,acceptable,0,0
+58,120.067,26,Female,MS,Design for Social Innovation,Thai,93,3,Is.to2,Adj-to,well-known,0,0
+58,120.067,26,Female,MS,Design for Social Innovation,Thai,93,3,Is.to3,Adj-to,practical ,0,0
+58,120.067,26,Female,MS,Design for Social Innovation,Thai,93,3,Is.to4,Adj-to,understandable,0,0
+59,15.333,34,Male,Doctoral,Epidemiology,Thai,115,5,Is.that1,Adj-that,understood,1,0
+59,15.333,34,Male,Doctoral,Epidemiology,Thai,115,5,Is.that2,Adj-that,mentioned,1,0
+59,15.333,34,Male,Doctoral,Epidemiology,Thai,115,5,Is.that3,Adj-that,believed,1,0
+59,15.333,34,Male,Doctoral,Epidemiology,Thai,115,5,Is.that4,Adj-that,hypothesized,1,0
+59,15.333,34,Male,Doctoral,Epidemiology,Thai,115,5,Is.that5,Adj-that,posited,1,0
+59,15.333,34,Male,Doctoral,Epidemiology,Thai,115,5,Seem.to1,Adj-to,presumptory,0,1
+59,15.333,34,Male,Doctoral,Epidemiology,Thai,115,5,Seem.to2,Adj-to,unfitting,0,0
+59,15.333,34,Male,Doctoral,Epidemiology,Thai,115,5,Seem.to3,Adj-to,prudent,0,0
+59,15.333,34,Male,Doctoral,Epidemiology,Thai,115,5,Seem.to4,Adj-to,perfunctory,0,0
+60,14.967,26,Female,Doctoral,Geology,Thai,78,4.928571429,Seem.that1,Adj-that,different,0,0
+60,14.967,26,Female,Doctoral,Geology,Thai,78,4.928571429,Seem.that2,Adj-that,unusual,0,0
+60,14.967,26,Female,Doctoral,Geology,Thai,78,4.928571429,Seem.that3,Adj-that,distinguish ,0,1
+60,14.967,26,Female,Doctoral,Geology,Thai,78,4.928571429,Seem.to1,Adj-to,common,0,0
+60,14.967,26,Female,Doctoral,Geology,Thai,78,4.928571429,Seem.to2,Adj-to,specific,0,0
+60,14.967,26,Female,Doctoral,Geology,Thai,78,4.928571429,Seem.to3,Adj-to,constant,0,0
+60,14.967,26,Female,Doctoral,Geology,Thai,78,4.928571429,Seem.to4,Adj-to,scientific,0,0
+60,14.967,26,Female,Doctoral,Geology,Thai,78,4.928571429,Seem.to5,Adj-to,normal,0,0
+60,14.967,26,Female,Doctoral,Geology,Thai,78,4.928571429,Seem.to6,Adj-to,abnormal,0,0
+60,14.967,26,Female,Doctoral,Geology,Thai,78,4.928571429,Seem.to7,Adj-to,general,0,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Is.that1,Adj-that,noted,1,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Is.that2,Adj-that,indicated,1,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Is.that3,Adj-that,hypothesized,1,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Is.that4,Adj-that,predicted,1,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Is.that5,Adj-that,concluded,1,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Is.that6,Adj-that,prevalent ,0,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Is.that7,Adj-that,significant ,0,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Seem.to1,Adj-to,premature,0,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Seem.to2,Adj-to,inadequate,0,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Seem.to3,Adj-to,invalid,0,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Seem.to4,Adj-to,prevalent,0,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Seem.to5,Adj-to,significant,0,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Seem.to6,Adj-to,valid,0,0
+61,15.317,32,Female,Doctoral,Education,Thai,102,4.066666667,Seem.to7,Adj-to,biased,0,0
+62,18.75,24,Male,MS,Engineering,Thai,100,4.933333333,Seem.that1,Adj-that,interesting,0,0
+62,18.75,24,Male,MS,Engineering,Thai,100,4.933333333,Seem.that2,Adj-that,important,0,0
+62,18.75,24,Male,MS,Engineering,Thai,100,4.933333333,Seem.that3,Adj-that,possible,0,0
+62,18.75,24,Male,MS,Engineering,Thai,100,4.933333333,Seem.that4,Adj-that,impossible,0,0
+62,18.75,24,Male,MS,Engineering,Thai,100,4.933333333,Seem.that5,Adj-that,brilliant,0,0
+62,18.75,24,Male,MS,Engineering,Thai,100,4.933333333,Seem.that6,Adj-that,outstanding,0,0
+62,18.75,24,Male,MS,Engineering,Thai,100,4.933333333,Seem.that7,Adj-that,out-of-control,0,0
+62,18.75,24,Male,MS,Engineering,Thai,100,4.933333333,Seem.to1,Adj-to,impossible,0,0
+62,18.75,24,Male,MS,Engineering,Thai,100,4.933333333,Seem.to2,Adj-to,possible,0,0
+62,18.75,24,Male,MS,Engineering,Thai,100,4.933333333,Seem.to3,Adj-to,interesting,0,0
+62,18.75,24,Male,MS,Engineering,Thai,100,4.933333333,Seem.to4,Adj-to,important,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.that1,Adj-that,unbelievable,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.that2,Adj-that,perfect,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.that3,Adj-that,good,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.that4,Adj-that,bad,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.that5,Adj-that,unpredictable,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.that6,Adj-that,unrelavant,0,1
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.that7,Adj-that,relavant,0,1
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.that8,Adj-that,suitable,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.that9,Adj-that,proper,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.that10,Adj-that,okay,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.to1,Adj-to,bad,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.to2,Adj-to,good,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.to3,Adj-to,superb,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.to4,Adj-to,perfect,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.to5,Adj-to,interesting,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.to6,Adj-to,fun,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.to7,Adj-to,meaningful,0,0
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.to8,Adj-to,irrelavant,0,1
+63,14.817,30,Female,Doctoral,Microbiology,Thai,90,4.111111111,Seem.to9,Adj-to,relavant,0,1
+64,26.033,24,Female,MS,Documentary Films,Thai,78,2.1,Is.to1,Adj-to,deniable,0,0
+64,26.033,24,Female,MS,Documentary Films,Thai,78,2.1,Is.to2,Adj-to,acceptable,0,0
+64,26.033,24,Female,MS,Documentary Films,Thai,78,2.1,Is.to3,Adj-to,agreeable,0,0
+64,26.033,24,Female,MS,Documentary Films,Thai,78,2.1,Is.to4,Adj-to,unacceptable,0,0
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.that1,Adj-that,like,0,1
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.that2,Adj-that,hard,0,0
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.that3,Adj-that,impossible,0,0
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.that4,Adj-that,easy,0,0
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.that5,Adj-that,possile,0,1
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.that6,Adj-that,nice,0,0
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.that7,Adj-that,great,0,0
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.that8,Adj-that,wonderful,0,0
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.to1,Adj-to,hard,0,0
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.to2,Adj-to,bad,0,0
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.to3,Adj-to,bad,0,0
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.to4,Adj-to,right,0,0
+65,17.867,28,Female,MS,Design,Thai,89,2.416666667,Seem.to5,Adj-to,stupid,0,0
+66,13.167,30,Male,Doctoral,Biology,Thai,NA,3.666666667,Is.that1,Adj-that,TRUE,0,0
+66,13.167,30,Male,Doctoral,Biology,Thai,NA,3.666666667,Is.that2,Adj-that,correct,0,0
+66,13.167,30,Male,Doctoral,Biology,Thai,NA,3.666666667,Is.that3,Adj-that,right,0,0
+66,13.167,30,Male,Doctoral,Biology,Thai,NA,3.666666667,Is.that4,Adj-that,alright,0,0
+66,13.167,30,Male,Doctoral,Biology,Thai,NA,3.666666667,Is.that5,Adj-that,fortunate,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Seem.that1,Adj-that,like,0,1
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Seem.that2,Adj-that,good,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Seem.that3,Adj-that,bad,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Seem.that4,Adj-that,poor,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Seem.that5,Adj-that,mad,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Seem.that6,Adj-that,perfect,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Seem.that7,Adj-that,awful,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Seem.that8,Adj-that,magnificent,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Seem.that9,Adj-that,hard,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Seem.that10,Adj-that,difficult,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Seem.that11,Adj-that,easy,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Seem.that12,Adj-that,tricky,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Is.to1,Adj-to,good,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Is.to2,Adj-to,bad,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Is.to3,Adj-to,mad,0,0
+67,14.467,28,Male,Doctoral,Computer Science,Thai,109,3.071428571,Is.to4,Adj-to,wise,0,0
+68,14.65,26,Female,Doctoral,Linguistics,Thai,109,5,Is.that1,Adj-that,clear,0,0
+68,14.65,26,Female,Doctoral,Linguistics,Thai,109,5,Is.that2,Adj-that,claimed,1,0
+68,14.65,26,Female,Doctoral,Linguistics,Thai,109,5,Is.that3,Adj-that,reported,1,0
+68,14.65,26,Female,Doctoral,Linguistics,Thai,109,5,Is.that4,Adj-that,studied,1,0
+68,14.65,26,Female,Doctoral,Linguistics,Thai,109,5,Is.that5,Adj-that,found,1,0
+68,14.65,26,Female,Doctoral,Linguistics,Thai,109,5,Is.that6,Adj-that,tested,1,0
+68,14.65,26,Female,Doctoral,Linguistics,Thai,109,5,Is.that7,Adj-that,proved,1,0
+68,14.65,26,Female,Doctoral,Linguistics,Thai,109,5,Is.that8,Adj-that,provided,1,0
+68,14.65,26,Female,Doctoral,Linguistics,Thai,109,5,Seem.to1,Adj-to,plausible,0,0
+68,14.65,26,Female,Doctoral,Linguistics,Thai,109,5,Seem.to2,Adj-to,reasonable,0,0
+68,14.65,26,Female,Doctoral,Linguistics,Thai,109,5,Seem.to3,Adj-to,problematic,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.that1,Adj-that,oppose,0,1
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.that2,Adj-that,promising,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.that3,Adj-that,efficient,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.that4,Adj-that,reliable,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.that5,Adj-that,possible,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.that6,Adj-that,impossible,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.that7,Adj-that,unreliable,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.that8,Adj-that,sufficient,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.that9,Adj-that,direct,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.that10,Adj-that,indirect,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.that11,Adj-that,confirm,0,1
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to1,Adj-to,familiar,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to2,Adj-to,similar,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to3,Adj-to,confirm,0,1
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to4,Adj-to,agree,0,1
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to5,Adj-to,contradict,0,1
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to6,Adj-to,acceptable,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to7,Adj-to,unacceptable,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to8,Adj-to,interesting,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to9,Adj-to,reliable,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to10,Adj-to,promising,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to11,Adj-to,possible,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to12,Adj-to,unreliable,0,0
+69,15.65,27,NA,MS,Pharmaceutical Sciences,Thai,95,3.722222222,Seem.to13,Adj-to,oppose,0,1
+70,21.433,26,Male,MS,English,Thai,113,5,Seem.that1,Adj-that,possible,0,0
+70,21.433,26,Male,MS,English,Thai,113,5,Seem.that2,Adj-that,unlikely,0,0
+70,21.433,26,Male,MS,English,Thai,113,5,Seem.that3,Adj-that,unpalatable,0,0
+70,21.433,26,Male,MS,English,Thai,113,5,Seem.that4,Adj-that,likely,0,0
+70,21.433,26,Male,MS,English,Thai,113,5,Seem.that5,Adj-that,probable,0,0
+70,21.433,26,Male,MS,English,Thai,113,5,Seem.that6,Adj-that,shocking,0,0
+70,21.433,26,Male,MS,English,Thai,113,5,Is.to1,Adj-to,unacceptable,0,0
+70,21.433,26,Male,MS,English,Thai,113,5,Is.to2,Adj-to,unfathomable,0,0
+70,21.433,26,Male,MS,English,Thai,113,5,Is.to3,Adj-to,possible,0,0
+70,21.433,26,Male,MS,English,Thai,113,5,Is.to4,Adj-to,easy,0,0
+70,21.433,26,Male,MS,English,Thai,113,5,Is.to5,Adj-to,difficult,0,0
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Seem.that1,Adj-that,straightforward,0,0
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Seem.that2,Adj-that,obvious,0,0
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Seem.that3,Adj-that,complicate,0,1
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Seem.that4,Adj-that,justifiable,0,0
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Seem.that5,Adj-that,epxlaina,0,1
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Is.to1,Adj-to,necessary,0,0
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Is.to2,Adj-to,crucial,0,0
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Is.to3,Adj-to,essential,0,0
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Is.to4,Adj-to,hard,0,0
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Is.to5,Adj-to,easy,0,0
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Is.to6,Adj-to,difficult,0,0
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Is.to7,Adj-to,trivial,0,0
+71,12.517,26,Male,Doctoral,Computer Science,Thai,100,3.7,Is.to8,Adj-to,redundant,0,0
+72,17.067,28,Female,MS,Information Systems and Technology,Thai,101,3.909090909,Seem.that1,Adj-that,like,0,1
+72,17.067,28,Female,MS,Information Systems and Technology,Thai,101,3.909090909,Seem.to1,Adj-to,likely,0,0
+72,17.067,28,Female,MS,Information Systems and Technology,Thai,101,3.909090909,Seem.to2,Adj-to,logical,0,0
+72,17.067,28,Female,MS,Information Systems and Technology,Thai,101,3.909090909,Seem.to3,Adj-to,reasonable,0,0
+72,17.067,28,Female,MS,Information Systems and Technology,Thai,101,3.909090909,Seem.to4,Adj-to,meaningful,0,0
+73,49.85,24,Male,MS,Global Sustainability,Thai,NA,5,Is.that1,Adj-that,suggested,1,0
+73,49.85,24,Male,MS,Global Sustainability,Thai,NA,5,Is.that2,Adj-that,important,0,0
+73,49.85,24,Male,MS,Global Sustainability,Thai,NA,5,Is.that3,Adj-that,crucial,0,0
+73,49.85,24,Male,MS,Global Sustainability,Thai,NA,5,Is.that4,Adj-that,necessary,0,0
+73,49.85,24,Male,MS,Global Sustainability,Thai,NA,5,Is.to1,Adj-to,risky,0,0
+73,49.85,24,Male,MS,Global Sustainability,Thai,NA,5,Is.to2,Adj-to,crucial,0,0
+73,49.85,24,Male,MS,Global Sustainability,Thai,NA,5,Is.to3,Adj-to,essential,0,0
+73,49.85,24,Male,MS,Global Sustainability,Thai,NA,5,Is.to4,Adj-to,important,0,0
+73,49.85,24,Male,MS,Global Sustainability,Thai,NA,5,Is.to5,Adj-to,suggested,1,0
+74,31.95,27,Male,MS,Engineering,Thai,97,2.666666667,Is.that1,Adj-that,important,0,0
+74,31.95,27,Male,MS,Engineering,Thai,97,2.666666667,Is.that2,Adj-that,necessary,0,0
+74,31.95,27,Male,MS,Engineering,Thai,97,2.666666667,Is.that3,Adj-that,concluded,1,0
+74,31.95,27,Male,MS,Engineering,Thai,97,2.666666667,Seem.to1,Adj-to,weird,0,0
+74,31.95,27,Male,MS,Engineering,Thai,97,2.666666667,Seem.to2,Adj-to,possible,0,0
+74,31.95,27,Male,MS,Engineering,Thai,97,2.666666667,Seem.to3,Adj-to,plausible,0,0
+74,31.95,27,Male,MS,Engineering,Thai,97,2.666666667,Seem.to4,Adj-to,impossible,0,0
+74,31.95,27,Male,MS,Engineering,Thai,97,2.666666667,Seem.to5,Adj-to,probable,0,0
+74,31.95,27,Male,MS,Engineering,Thai,97,2.666666667,Seem.to6,Adj-to,reliable,0,0
+75,16.833,27,Female,Doctoral,Medicine,Thai,110,2.4,Is.that1,Adj-that,crucial,0,0
+75,16.833,27,Female,Doctoral,Medicine,Thai,110,2.4,Is.that2,Adj-that,important,0,0
+75,16.833,27,Female,Doctoral,Medicine,Thai,110,2.4,Is.that3,Adj-that,acceptable,0,0
+75,16.833,27,Female,Doctoral,Medicine,Thai,110,2.4,Is.that4,Adj-that,assumed,1,0
+75,16.833,27,Female,Doctoral,Medicine,Thai,110,2.4,Is.that5,Adj-that,common,0,0
+75,16.833,27,Female,Doctoral,Medicine,Thai,110,2.4,Is.that6,Adj-that,known,1,0
+75,16.833,27,Female,Doctoral,Medicine,Thai,110,2.4,Is.that7,Adj-that,accepted,1,0
+75,16.833,27,Female,Doctoral,Medicine,Thai,110,2.4,Is.to1,Adj-to,crucial,0,0
+75,16.833,27,Female,Doctoral,Medicine,Thai,110,2.4,Is.to2,Adj-to,important,0,0
+75,16.833,27,Female,Doctoral,Medicine,Thai,110,2.4,Is.to3,Adj-to,adequate,0,0
+75,16.833,27,Female,Doctoral,Medicine,Thai,110,2.4,Is.to4,Adj-to,essential,0,0
+75,16.833,27,Female,Doctoral,Medicine,Thai,110,2.4,Is.to5,Adj-to,necessary,0,0
+76,20.317,26,Female,Doctoral,Physics,Thai,93,2.642857143,Seem.that1,Adj-that,difficult,0,0
+76,20.317,26,Female,Doctoral,Physics,Thai,93,2.642857143,Seem.that2,Adj-that,easy,0,0
+76,20.317,26,Female,Doctoral,Physics,Thai,93,2.642857143,Seem.that3,Adj-that,obvious,0,0
+76,20.317,26,Female,Doctoral,Physics,Thai,93,2.642857143,Seem.that4,Adj-that,strength,0,1
+76,20.317,26,Female,Doctoral,Physics,Thai,93,2.642857143,Seem.that5,Adj-that,typic,0,1
+76,20.317,26,Female,Doctoral,Physics,Thai,93,2.642857143,Is.to1,Adj-to,difficult,0,0
+76,20.317,26,Female,Doctoral,Physics,Thai,93,2.642857143,Is.to2,Adj-to,easy,0,0
+76,20.317,26,Female,Doctoral,Physics,Thai,93,2.642857143,Is.to3,Adj-to,possible,0,0
+76,20.317,26,Female,Doctoral,Physics,Thai,93,2.642857143,Is.to4,Adj-to,impossible,0,0
+76,20.317,26,Female,Doctoral,Physics,Thai,93,2.642857143,Is.to5,Adj-to,obvious,0,0
+76,20.317,26,Female,Doctoral,Physics,Thai,93,2.642857143,Is.to6,Adj-to,important,0,0
+77,12.917,28,Male,Doctoral,Epidemiology,Thai,115,4.764705882,Seem.that1,Adj-that,interesting,0,0
+77,12.917,28,Male,Doctoral,Epidemiology,Thai,115,4.764705882,Seem.that2,Adj-that,counterintuitive,0,0
+77,12.917,28,Male,Doctoral,Epidemiology,Thai,115,4.764705882,Seem.that3,Adj-that,intuitive,0,0
+77,12.917,28,Male,Doctoral,Epidemiology,Thai,115,4.764705882,Seem.that4,Adj-that,illogical,0,0
+77,12.917,28,Male,Doctoral,Epidemiology,Thai,115,4.764705882,Seem.that5,Adj-that,obvious,0,0
+77,12.917,28,Male,Doctoral,Epidemiology,Thai,115,4.764705882,Seem.that6,Adj-that,unclear,0,0
+77,12.917,28,Male,Doctoral,Epidemiology,Thai,115,4.764705882,Is.to1,Adj-to,time,0,1
+77,12.917,28,Male,Doctoral,Epidemiology,Thai,115,4.764705882,Is.to2,Adj-to,important,0,0
+77,12.917,28,Male,Doctoral,Epidemiology,Thai,115,4.764705882,Is.to3,Adj-to,logical,0,0
+77,12.917,28,Male,Doctoral,Epidemiology,Thai,115,4.764705882,Is.to4,Adj-to,practical,0,0
+77,12.917,28,Male,Doctoral,Epidemiology,Thai,115,4.764705882,Is.to5,Adj-to,crucial,0,0
+77,12.917,28,Male,Doctoral,Epidemiology,Thai,115,4.764705882,Is.to6,Adj-to,problematic,0,0
+78,17.917,31,Female,Doctoral,Anthropology,Thai,105,3.769230769,Seem.that1,Adj-that,convincing,0,0
+78,17.917,31,Female,Doctoral,Anthropology,Thai,105,3.769230769,Is.to1,Adj-to,crucial,0,0
+78,17.917,31,Female,Doctoral,Anthropology,Thai,105,3.769230769,Is.to2,Adj-to,important,0,0
+78,17.917,31,Female,Doctoral,Anthropology,Thai,105,3.769230769,Is.to3,Adj-to,necessary,0,0
+78,17.917,31,Female,Doctoral,Anthropology,Thai,105,3.769230769,Is.to4,Adj-to,valid,0,0
+78,17.917,31,Female,Doctoral,Anthropology,Thai,105,3.769230769,Is.to5,Adj-to,believed ,1,0
+79,29.817,26,Female,MS,Business,Thai,NA,3.25,Is.that1,Adj-that,known,1,0
+79,29.817,26,Female,MS,Business,Thai,NA,3.25,Is.that2,Adj-that,crucial,0,0
+79,29.817,26,Female,MS,Business,Thai,NA,3.25,Is.that3,Adj-that,important,0,0
+79,29.817,26,Female,MS,Business,Thai,NA,3.25,Is.that4,Adj-that,necessary,0,0
+79,29.817,26,Female,MS,Business,Thai,NA,3.25,Is.that5,Adj-that,key,0,0
+79,29.817,26,Female,MS,Business,Thai,NA,3.25,Is.that6,Adj-that,essential,0,0
+79,29.817,26,Female,MS,Business,Thai,NA,3.25,Seem.to1,Adj-to,complicated,0,0
+79,29.817,26,Female,MS,Business,Thai,NA,3.25,Seem.to2,Adj-to,hard,0,0
+79,29.817,26,Female,MS,Business,Thai,NA,3.25,Seem.to3,Adj-to,easy,0,0
+79,29.817,26,Female,MS,Business,Thai,NA,3.25,Seem.to4,Adj-to,difficult,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that1,Adj-that,great,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that2,Adj-that,good,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that3,Adj-that,terrible,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that4,Adj-that,like,0,1
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that5,Adj-that,excellent,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that6,Adj-that,wonderful,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that7,Adj-that,acceptable,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that8,Adj-that,reasonable,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that9,Adj-that,unreasonable,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that10,Adj-that,unacceptable,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that11,Adj-that,logical,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that12,Adj-that,possible,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.that13,Adj-that,impossible,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to1,Adj-to,great,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to2,Adj-to,reasonable,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to3,Adj-to,good,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to4,Adj-to,acceptable,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to5,Adj-to,eligible,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to6,Adj-to,legitimate,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to7,Adj-to,unacceptable,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to8,Adj-to,unreasonable,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to9,Adj-to,logical,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to10,Adj-to,practical,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to11,Adj-to,possible,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to12,Adj-to,impossible,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to13,Adj-to,impractical,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to14,Adj-to,suitable,0,0
+80,5777.783,24,Male,Doctoral,Computer Science,Thai,90,2.777777778,Seem.to15,Adj-to,right,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Is.that1,Adj-that,possible,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Is.that2,Adj-that,probable,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Is.that3,Adj-that,impossible,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Is.that4,Adj-that,likely,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Is.that5,Adj-that,unlikely,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Is.that6,Adj-that,undeniable,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Is.that7,Adj-that,unquestionable,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Is.that8,Adj-that,evident,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Seem.to1,Adj-to,dangerous ,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Seem.to2,Adj-to,risky,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Seem.to3,Adj-to,rational,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Seem.to4,Adj-to,irrational,0,0
+81,18.667,27,Female,MS,Public Affairs,Thai,113,3,Seem.to5,Adj-to,favorable,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Seem.that1,Adj-that,important,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Seem.that2,Adj-that,sure,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Seem.that3,Adj-that,probable,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Seem.that4,Adj-that,strange,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Seem.that5,Adj-that,necessary,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Seem.that6,Adj-that,fair,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Seem.that7,Adj-that,unfair,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Seem.that8,Adj-that,fitting,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Seem.that9,Adj-that,insane,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Is.to1,Adj-to,important,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Is.to2,Adj-to,crucial,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Is.to3,Adj-to,vital,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Is.to4,Adj-to,key,0,0
+82,16.383,27,Male,MS,MBA,Thai,117,4.75,Is.to5,Adj-to,necessary,0,0
+83,28.533,28,Male,Doctoral,Computer Science,Thai,108,5,Seem.that1,Adj-that,strange,0,0
+83,28.533,28,Male,Doctoral,Computer Science,Thai,108,5,Seem.that2,Adj-that,accurate,0,0
+83,28.533,28,Male,Doctoral,Computer Science,Thai,108,5,Seem.that3,Adj-that,precise,0,0
+83,28.533,28,Male,Doctoral,Computer Science,Thai,108,5,Seem.that4,Adj-that,correct,0,0
+83,28.533,28,Male,Doctoral,Computer Science,Thai,108,5,Seem.that5,Adj-that,good,0,0
+83,28.533,28,Male,Doctoral,Computer Science,Thai,108,5,Seem.that6,Adj-that,positive,0,0
+83,28.533,28,Male,Doctoral,Computer Science,Thai,108,5,Is.to1,Adj-to,interesting,0,0
+83,28.533,28,Male,Doctoral,Computer Science,Thai,108,5,Is.to2,Adj-to,important,0,0
+83,28.533,28,Male,Doctoral,Computer Science,Thai,108,5,Is.to3,Adj-to,exciting,0,0
+83,28.533,28,Male,Doctoral,Computer Science,Thai,108,5,Is.to4,Adj-to,entertaining,0,0
+83,28.533,28,Male,Doctoral,Computer Science,Thai,108,5,Is.to5,Adj-to,slow,0,0
+84,15.833,24,Male,MS,Engineering,Thai,102,3.615384615,Is.that1,Adj-that,verified,1,0
+84,15.833,24,Male,MS,Engineering,Thai,102,3.615384615,Is.that2,Adj-that,proved,1,0
+84,15.833,24,Male,MS,Engineering,Thai,102,3.615384615,Is.that3,Adj-that,shown,1,0
+84,15.833,24,Male,MS,Engineering,Thai,102,3.615384615,Is.that4,Adj-that,tested,1,0
+84,15.833,24,Male,MS,Engineering,Thai,102,3.615384615,Is.that5,Adj-that,clear,0,0
+84,15.833,24,Male,MS,Engineering,Thai,102,3.615384615,Seem.to1,Adj-to,interesting,0,0
+84,15.833,24,Male,MS,Engineering,Thai,102,3.615384615,Seem.to2,Adj-to,exciting,0,0
+84,15.833,24,Male,MS,Engineering,Thai,102,3.615384615,Seem.to3,Adj-to,fun,0,0
+84,15.833,24,Male,MS,Engineering,Thai,102,3.615384615,Seem.to4,Adj-to,appropriate,0,0
