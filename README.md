@@ -21,4 +21,19 @@ The following files are inside **Data**:
 
 ## Elicitation data
 
-Production data can be found in the **Production_introIT.csv** file, which consists of the following columns:
+Elicitation data can be found in the **Production_introIT.csv** file, which consists of the following columns:
+
+* `Participant`: ID
+* `Time_min`: Time spent completing the experiment (in minutes)
+* `Age`: Participants' age (in years)
+* `Sex`: Participants' gender (three levels: Male, Female, or Non-specified)
+* `Degree`: Current graduate degree (two levels: MS or Doctoral)
+* `Program`: Field of study
+* `L1`: Participants' first language (two levels: English or Thai)
+* `TestScore`: TOEFL iBT scores
+* `AWEQ`: Average scores on the Academic Writing Experience Questionnaire
+* `Frame`: Stimuli (Is.that = It is _____ that; Seem.that = It seems _____ that, etc.) Numbers refer to order of items
+* `Variant`: Introductory-*it* variant the frame instantiates (two levels: Adj-that or Adj-to)
+* `Response`: Answers supplied by the participants
+* `Past_participle`: Whether responses are past participle (e.g., *understood*, *argued*)
+* `Incomplete`: Whether responses are typos, mispelled words, or non-adjective responses
