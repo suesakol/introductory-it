@@ -6,5 +6,5 @@ This repository contains data and an R script for the paper "Usage Events and L2
 
 Inside the folder **Data**, you will find the following files:
 
--- AdjectiveList.txt: a long-format table of adjectives and the variants with which they are attested (39,489 lines: Adj-that = 15,862 and Adj-to = 23,627) 
--- Corpus_introIT.csv: data as retrieved from COCA, after manual removal of instances that were not part of the construction, as reported in the article.
+* AdjectiveList.txt: a long-format table of adjectives and the variants with which they are attested (39,489 lines: Adj-that = 15,862 and Adj-to = 23,627) 
+* Corpus_introIT.csv: data as retrieved from COCA, after manual removal of instances that were not part of the construction, as reported in the article.
