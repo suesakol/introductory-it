@@ -1,12 +1,17 @@
 # Usage Events and L2 Constructional Knowledge: Two Variants of Introductory-it construction
 
-Sakol Suethanapornkul (Thammasat University) [Personal website](https://sakol.netlify.app)
+Sakol Suethanapornkul (Thammasat University) [Check out my pPersonal website](https://sakol.netlify.app)]
 
 This repository contains data and an R script for the paper "Usage Events and L2 Constructional Knowledge: A Study of Two Variants of the Introductory-*it* Construction" which is under review.
 
 
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
 
-## Data
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+
+
+## Overview
 
 The following files are inside **Data**:
 
