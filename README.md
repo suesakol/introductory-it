@@ -77,7 +77,20 @@ The following columns pertain specifically to the Thai L1 participants (`NA` for
 * `AgeRead`: The age at which participants started reading in English
 * `AgeFluentRead`: The age at which participants became fluent in reading in English
 * `PrimInstruct`: A primary means through which participants learned English
-  ++ Class = mainly through class instruction
-  ++ Interact = mainly through NS interaction
-  ++ Both = a mixture of both
+  - Class = mainly through class instruction
+  - Interact = mainly through NS interaction
+  - Both = a mixture of both
+* `CounEng`: Year in country where English is spoken
+* `FamEng`: Year with family where English is spoken
+* `EnvEng`: Year in school or work environment where English is spoken
+* `ForeignAccent`: Degree of foreign accent (1 almost none; 5 = moderate; 10 = pervasive)
+* `EngRead`: Self-rate English reading ability
+* `EngWrite`: Self-rate English writing ability
+* `EngSpeak`: Self-rate English speaking ability
+* `EngListen`: Self-rate English listening ability
+* `EngProf`: Self-rate English proficiency
+* `ThaiDaily`: Percentage of Thai in daily life
+* `EngDaily`: Percentage of English in daily life
+* `ThaiAcad`: Percentage of Thai in academic use
+* `EngAcad`: Percentage of English in academic use
 
