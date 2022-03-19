@@ -21,7 +21,7 @@ The following files are inside the **Data** folder:
 * **DCA_ProductionFull.txt**: A distinctive collexeme analysis report of the elicitation data, English L1 and Thai L1 data combined.
 * **DCA_ProductionThai.txt**: A distinctive collexeme analysis report of the elicitation data, Thai L1 data only.
 * **Demographics.csv**: Participants' demographic information.
-* **Production_introIT.csv**: Elicitation data from English L1 and Thai L1 participants.
+* **Production_introIT.csv**: Elicitation data from the English L1 and Thai L1 participants.
 
 
 
@@ -83,7 +83,10 @@ The following columns pertain specifically to the Thai L1 participants (`NA` for
 * `CounEng`: Year in country where English is spoken
 * `FamEng`: Year with family where English is spoken
 * `EnvEng`: Year in school or work environment where English is spoken
-* `ForeignAccent`: Degree of foreign accent (1 almost none; 5 = moderate; 10 = pervasive)
+* `ForeignAccent`: Degree of foreign accent in English; for instance,
+  - 1 = almost none
+  - 5 = moderate
+  - 10 = pervasive
 * `EngRead`: Self-rate English reading ability
 * `EngWrite`: Self-rate English writing ability
 * `EngSpeak`: Self-rate English speaking ability
