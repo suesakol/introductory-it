@@ -69,9 +69,15 @@ Demographic information of study participants can be found in the **Demographics
 * `AWE.16`: Rating on the 16th item of the AWEQ (*Write a lab report*)
 * `AWE.17`: Rating on the 17th item of the AWEQ (*Write an annotated bibliography*)
 * `AWE.18`: Rating on the 18th item of the AWEQ (*Complete a report for broken or missing equipment*)
-* `AgeLearn`: The age at which Thai L1 participants started learning English (`NA` for English L1 participants)
-* `AgeFluent`: The age at which Thai L1 participants became fluent in English (`NA` for English L1 participants)
-* `AgeRead`: The age at which Thai L1 participants started reading in English (`NA` for English L1 participants)
-* `AgeFluentRead`: The age at which Thai L1 participants became fluent in reading in English (`NA` for English L1 participants)
-* `PrimInstruct`: A primary means through which Thai L1 participants learned English (Options: Class = mainly through class instruction; Interact = mainly through NS interaction; Both = a mixture of both)
+
+The following columns pertain specifically to the Thai L1 participants (`NA` for the English L1 subjects):
+
+* `AgeLearn`: The age at which participants started learning English
+* `AgeFluent`: The age at which participants became fluent in English
+* `AgeRead`: The age at which participants started reading in English
+* `AgeFluentRead`: The age at which participants became fluent in reading in English
+* `PrimInstruct`: A primary means through which participants learned English
+  ++ Class = mainly through class instruction
+  ++ Interact = mainly through NS interaction
+  ++ Both = a mixture of both
 
