@@ -46,7 +46,28 @@ Elicitation data can be found in the **Production_introIT.csv** file, which cons
 
 
 
-## Demographic dnformation
+## Demographic information
 Demographic information of study participants can be found in the **Demographics.csv**, which consists of the following columns:
+
+* `Participant`: Participant ID
+* `AWEQ`: Average scores on the Academic Writing Experience Questionnaire
+* `AWE.1`: Rating on the 1st item of the AWEQ (*Write an email to professors, colleagues, or peers on academic-related topics*)
+* `AWE.2`: Rating on the 2nd item of the AWEQ (*Provide written feedback on students' papers (as a course TA or instructor)*)
+* `AWE.3`: Rating on the 3rd item of the AWEQ (*Submit an abstract for a conference presentation*)
+* `AWE.4`: Rating on the 4th item of the AWEQ (*Write a 20+ page paper*)
+* `AWE.5`: Rating on the 5th item of the AWEQ (*Write a short summary of a research paper or project*)
+* `AWE.6`: Rating on the 6th item of the AWEQ (*Write a critique of an article or study*)
+* `AWE.7`: Rating on the 7th item of the AWEQ (*Write a peer review for a project proposal*)
+* `AWE.8`: Rating on the 8th item of the AWEQ (*Review manuscripts for a journal*)
+* `AWE.9`: Rating on the 9th item of the AWEQ (*Write a part of the thesis or dissertation*)
+* `AWE.10`: Rating on the 10th item of the AWEQ (*Prepare an academic presentation*)
+* `AWE.11`: Rating on the 11th item of the AWEQ (*Create a PowerPoint for a formal research presentation*)
+* `AWE.12`: Rating on the 12th item of the AWEQ (*Submit a grant proposal for funding*)
+* `AWE.13`: Rating on the 13th item of the AWEQ (*Submit a research proposal*)
+* `AWE.14`: Rating on the 14th item of the AWEQ (*Write a memo or report*)
+* `AWE.15`: Rating on the 15th item of the AWEQ (*Take written minutes for a meeting*)
+* `AWE.16`: Rating on the 16th item of the AWEQ (*Write a lab report*)
+* `AWE.17`: Rating on the 17th item of the AWEQ (*Write an annotated bibliography*)
+* `AWE.18`: Rating on the 18th item of the AWEQ (*Complete a report for broken or missing equipment*)
 
 
