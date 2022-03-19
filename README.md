@@ -37,7 +37,7 @@ Elicitation data can be found in the **Production_introIT.csv** file, which cons
 * `Program`: Field of study
 * `L1`: Participants' first language (two levels: English or Thai)
 * `TestScore`: TOEFL iBT scores
-* `AWEQ`: Average scores on the Academic Writing Experience Questionnaire
+* `AWEQ`: Average scores on the Academic Writing Experience Questionnaire (AWEQ)
 * `Frame`: Target stimuli (e.g., Is.that = It is _____ that; Seem.that = It seems _____ that, etc.) Numbers refer to order of responses
 * `Variant`: Introductory-*it* variant the frame instantiates (two levels: Adj-that or Adj-to)
 * `Response`: Answers supplied by the participants
@@ -50,7 +50,7 @@ Elicitation data can be found in the **Production_introIT.csv** file, which cons
 Demographic information of study participants can be found in the **Demographics.csv**, which consists of the following columns:
 
 * `Participant`: Participant ID
-* `AWEQ`: Average scores on the Academic Writing Experience Questionnaire
+* `AWEQ`: Average scores on the Academic Writing Experience Questionnaire (AWEQ)
 * `AWE.1`: Rating on the 1st item of the AWEQ (*Write an email to professors, colleagues, or peers on academic-related topics*)
 * `AWE.2`: Rating on the 2nd item of the AWEQ (*Provide written feedback on students' papers (as a course TA or instructor)*)
 * `AWE.3`: Rating on the 3rd item of the AWEQ (*Submit an abstract for a conference presentation*)
@@ -69,5 +69,9 @@ Demographic information of study participants can be found in the **Demographics
 * `AWE.16`: Rating on the 16th item of the AWEQ (*Write a lab report*)
 * `AWE.17`: Rating on the 17th item of the AWEQ (*Write an annotated bibliography*)
 * `AWE.18`: Rating on the 18th item of the AWEQ (*Complete a report for broken or missing equipment*)
-
+* `AgeLearn`: The age at which Thai L1 participants started learning English (`NA` for English L1 participants)
+* `AgeFluent`: The age at which Thai L1 participants became fluent in English (`NA` for English L1 participants)
+* `AgeRead`: The age at which Thai L1 participants started reading in English (`NA` for English L1 participants)
+* `AgeFluentRead`: The age at which Thai L1 participants became fluent in reading in English (`NA` for English L1 participants)
+* `PrimInstruct`: A primary means through which Thai L1 participants learned English (Options: Class = mainly through class instruction; Interact = mainly through NS interaction; Both = a mixture of both)
 
