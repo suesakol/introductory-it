@@ -17,9 +17,9 @@ The following files are inside the **Data** folder:
 
 * **AdjectiveList.txt**: a long-format table of adjectives and the variants with which they are attested. Minus the column-header row, the file contains 39,489 lines. This is divided into 15,862 lines of Adj-that and 23,627 of Adj-to. 
 * **Corpus_introIT.csv**: corpus data from COCA. Note that this file contains only instances of Adj-that and Adj-to variants. Instances that were not part of the construction were removed, per steps discussed in the article.
-* **DCA_Corpus.txt**: A distinctive collexeme analysis report of the corpus data.
-* **DCA_ProductionFull.txt**: A distinctive collexeme analysis report of the elicitation data, English L1 and Thai L1 data combined.
-* **DCA_ProductionThai.txt**: A distinctive collexeme analysis report of the elicitation data, Thai L1 data only.
+* **DCA_Corpus.txt**: A distinctive collexeme analysis (DCA) report of the corpus data. This and other DCA reports were obtained using an R script provided by Stefan Th. Gries.
+* **DCA_ProductionFull.txt**: A DCA report of the elicitation data, English L1 and Thai L1 data combined.
+* **DCA_ProductionThai.txt**: A DCA report of the elicitation data, Thai L1 data only.
 * **Demographics.csv**: Participants' demographic information.
 * **Production_introIT.csv**: Elicitation data from the English L1 and Thai L1 participants.
 
