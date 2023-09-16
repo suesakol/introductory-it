@@ -1,6 +1,7 @@
 # Usage Events and Constructional Knowledge: Two Variants of Introductory-it Construction
 
 Sakol Suethanapornkul [[Personal website](https://sakol.netlify.app)]
+
 Sarut Supasiraprapa
 
 This repository contains data and an R script for the paper "Usage Events and Constructional Knowledge: A Study of Two Variants of the Introductory-*it* Construction" which is published in *Studies in Second Language Acquisition*.
