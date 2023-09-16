@@ -1,981 +1,1568 @@
-#############################################################
-### Analysis -- Introductory it construction      ###########
-### Sakol Suethanapornkul and Sarut Supasiraprapa ###########
-#############################################################
+##########################################################################
+##### Usage events and L2 knowledge of Introductory it construction  #####
+#####               Supplementary materials: R script                #####
+##########################################################################
+
+
+
+# 1. Preamble ----------------------------------------------------------------
+
+# (1) Load necessary packages
+
+# If packages not yet installed, run: 
+# install.packages(c("tidyverse", "lme4", "lmerTest", "MuMin", "magrittr", "gridExtra"))
 
 library(tidyverse)
-library(rsample)
-library(ggrepel)
-
-library(magrittr)
-
 library(lme4)
 library(lmerTest)
+library(MuMIn)
+library(magrittr)
+library(gridExtra)
 
 
-library(effects)
-library(ggeffects)
 
 
+# (2) Create a custom function: Normalized entropy: Hnorm (after Gries 2021)
 
-
-
-
-
-
-
-
-# Corpus analysis: Establishing adjective-variant associations ------------
-
-
-
-##### Pre-processing 
-
-# Read file as tibble
-
-corpusIntro <- read_csv("Data/Corpus_introIT.csv")
-
-
-# 1. Prepare data by extracting adjectives from POS tag column
-# (1) str_extract: in each line extract first instance of adjective (POS = JJ) 
-# since we only have one _JJ per line, str_extract is sufficient
-# matched patterns are vectorized (e.g., stored in a vector)
-# regex in "()" captures compound adj eg. far-fetched, well-known, and even
-# words like O.K. with period between them by a group here --> [\w|.]
-# (2) str_replace: substitute _JJ, _JJR, _JJS [regex = _JJ.*] with nothing
-
-# NOTE: %>% is embedded inside mutate to outline steps taken inside this column
-
-corpusDat <- corpusIntro %>% 
-  mutate(Adjectives = 
-           str_extract(TaggedQueryItem, "([\\w|.]*)-?([\\w|.]*)_JJ.") %>% 
-           str_replace(., "_JJ.*", "") %>% 
-           str_to_lower(.)
-         )
-
-
-# OPTIONAL: Extract verbs and adverbs from POS tag column
-
-# (1) since there are 1+ verbs (e.g., has become), we use str_extract_all
-# with this, we get a list inside a column "Verbs". we unnest this list with
-# unnest_wider() providing column name to the function. The function unnests
-# each element to its specific column (e.g., "has" to ...1 and "become" to ...2)
-# NOTE: this is a crude way to extract verbs (elements such as modals not included)
-
-# (2) then, we strip POS tags from each columns and unite the two columns
-# forming a "Verb" column that contains verbs 
-
-corpusDat <- corpusIntro %>% 
-  mutate(Adjectives = 
-           str_extract(TaggedQueryItem, "([\\w|.]*)-?([\\w|.]*)_JJ.") %>% 
-           str_replace(., "_JJ.*", "") %>% 
-           str_to_lower(.),
-         Verbs   = str_extract_all(TaggedQueryItem, "([\\w|']*)_V.."),
-         Adverbs = str_extract(TaggedQueryItem, "(\\w)*_RB[S|R]?")
-         ) %>% 
-  unnest_wider(col = Verbs) %>% 
-  rename(V1 = ...1,
-         V2 = ...2) %>% 
-  mutate(across(.cols = V1:V2, ~str_replace(.x, "_V.*", ""))
-         ) %>% 
-  unite(col = "Verbs", V1:V2, sep = " ", na.rm = TRUE) %>% 
-  mutate(Adverbs = str_replace(Adverbs, "_R.*", "")
-         )
-
-
-# Convert superlative adjectives to stem & make spelling consistent
-# Use case_when() for multiple if_else patterns and end with TRUE ~ existing vector
-
-corpusDat <- corpusDat %>% 
-  mutate(Adjectives = case_when(Adjectives %in% c("best", "better") ~ "good",
-                                Adjectives == "cheaper" ~ "cheap",
-                                Adjectives == "clearer" ~ "clear",
-                                Adjectives == "costlier" ~ "costly",
-                                Adjectives %in% c("easier", "easiest") ~ "easy",
-                                Adjectives == "fairer" ~ "fair",
-                                Adjectives == "farfetched" ~ "far-fetched",
-                                Adjectives == "faster" ~ "fast",
-                                Adjectives %in% c("harder", "hardest") ~ "hard",
-                                Adjectives == "likelier" ~ "likely",
-                                Adjectives %in% c("o.k.", "ok") ~ "okay",
-                                Adjectives == "odder" ~ "odd",
-                                Adjectives == "pleasanter" ~ "pleasant",
-                                Adjectives %in% c("safer", "safest") ~ "safe",
-                                Adjectives %in% c("simpler", "simplest") ~ "simple",
-                                Adjectives == "sweeter" ~ "sweet",
-                                Adjectives == "tougher" ~ "tough",
-                                Adjectives == "truer" ~ "true",
-                                Adjectives %in% c("wiser", "wisest") ~ "wise",
-                                Adjectives == "worse" ~ "bad",
-                                TRUE ~ Adjectives
-                                )
-         )
-
-
-
-
-
-##### Checking frequencies
-
-# Inspect total number of items per variant
-
-corpusDat %>% 
-  count(Variant)
-
-
-# Inspect number of types (total)
-
-corpusDat %>% 
-  distinct(Adjectives) %>% 
-  count()
-
-
-# Get type-token ratio of the complete data set
-
-corpusDat %>% 
-  group_by(Variant) %>% 
-  summarize(type = n_distinct(Adjectives), 
-            n = n(), 
-            TTR = (type/n)*100
-            ) %>% 
-  ungroup()
-
-
-# If words were distributed uniformly, how many instances per word in Adj-that?
-# ANS = 60.5
-
-corpusDat %>% 
-  filter(Variant == "Adj_that") %>% 
-  count(Adjectives) %>%
-  summarize(uniform = sum(n)/length(Adjectives)
-            )
-
-
-# Plot the distribution 
-
-TopLable <- corpusDat %>% 
-  filter(Variant == "Adj_that") %>%
-  count(Adjectives, sort = TRUE) %>% 
-  mutate(ID = row_number()) %>% 
-  head(n = 5)
-  
-
-corpusDat %>% 
-  filter(Variant == "Adj_that") %>% 
-  count(Adjectives, sort = TRUE) %>% 
-  mutate(ID = row_number()) %>% 
-  head(n = 100) %>% 
-  ggplot(aes(x = ID, y = n)) +
-  geom_point(color = "black") +
-  geom_line(stat = "identity") +
-  ggrepel::geom_text_repel(data = TopLable, aes(label = Adjectives), 
-                           show.legend = FALSE, hjust = -0.5) +
-  labs(x = "Rank order", y = "Frequencies") +
-  geom_hline(yintercept = 60.5, color = "red", linetype = "dashed") +
-  scale_y_continuous(breaks = c(0, 500, 1000, 1500, 2000, 2500)) +
-  theme_bw() +
-  theme(text = element_text(size = 15),
-        panel.grid = element_blank(), 
-        panel.border = element_blank(),
-        axis.line.x = element_line(colour = "black", size = 0.5, linetype = "solid"),
-        axis.line.y = element_line(colour = "black", size = 0.5, linetype = "solid")
-        ) +
-  ggsave("Adj-that-fulldata.png", dpi = 300)
-
-  
-# Repeat the same step with the Adj-to variant
-
-corpusDat %>% 
-  filter(Variant == "Adj_to") %>% 
-  count(Adjectives, sort = TRUE) %>% 
-  summarize(uniform = sum(n)/length(Adjectives)
-            )
-
-# ANS = 47.7
-
-
-# Plot the distribution 
-
-TopLable <- corpusDat %>% 
-  filter(Variant == "Adj_to") %>% 
-  count(Adjectives, sort = TRUE) %>% 
-  mutate(ID = row_number()) %>% 
-  head(n = 5)
-
-
-corpusDat %>% 
-  filter(Variant == "Adj_to") %>% 
-  count(Adjectives, sort = TRUE) %>% 
-  mutate(ID = row_number()) %>% 
-  head(n = 100) %>% 
-  ggplot(aes(x = ID, y = n)) +
-  geom_point(color = "black") +
-  geom_line(stat = "identity") +
-  ggrepel::geom_text_repel(data = TopLable, aes(label = Adjectives), 
-                           show.legend = FALSE, hjust = -0.55) +
-  labs(x = "Rank order", y = "Frequencies") +
-  geom_hline(yintercept = 47.7, color = "red", linetype = "dashed") +
-  theme_bw() +
-  theme(text = element_text(size = 15),
-        panel.grid = element_blank(), 
-        panel.border = element_blank(),
-        axis.line.x = element_line(colour = "black", size = 0.5, linetype = "solid"),
-        axis.line.y = element_line(colour = "black", size = 0.5, linetype = "solid")
-        ) +
-  ggsave("Adj-to-fulldata.png", dpi = 300)
-
-
-rm(TopLable)
-
-
-# Inspect frequency counts in Adj_that and Adj_to
-
-corpusDat %>% 
-  group_by(Adjectives) %>% 
-  summarize(Adj_that = sum(Variant == "Adj_that"), 
-            Adj_to = sum(Variant == "Adj_to")
-            ) %>% 
-  arrange(-Adj_that) %>% 
-  ungroup()
-
-
-# Create a sample table for DCA with 'necessary' as an example
-
-corpusDat %>% 
-  mutate(Necessary = if_else(Adjectives == "necessary", 1, 0) ) %>% 
-  group_by(Variant) %>% 
-  count(Necessary) %>% 
-  ungroup()
-
-
-# Obtain hapax legomena of each variant
-
-corpusDat %>% 
-  filter(Variant == "Adj_that") %>% 
-  # filter(Variant == "Adj_to") %>% 
-  count(Adjectives) %>% 
-  filter(n == 1) %>% 
-  summarize(total = n_distinct(Adjectives))
-
-
-# Relative entropy
-# dispersion measure for categorical data (e.g., adjectives in each variant)
-# approximates 1 as distributions become more even and 0 for uneven distributions
-
-# Create a function to calculate relative entropy
-
-hrel <- function(x){
+hnorm <- function(x){
   percentage <- x/sum(x)
-  find_hrel <- -sum(percentage * log(percentage))/log(length(percentage))
-  find_hrel
+  find_hnorm <- -sum(percentage * log(percentage))/log(length(percentage))
+  find_hnorm
   }
 
 
-# Calculate entropy (adj-that & adj-to done separately)
-
-corpusDat %>% 
-  filter(Variant == "Adj_that") %>% 
-  # filter(Variant == "Adj_to") %>% 
-  count(Adjectives, sort = TRUE) %>% 
-  summarize(hrel = hrel(n))
 
 
 
 
 
-##### DCA analysis with script from Gries (2015)
 
-# Write a data set to .txt
+# 2. Corpus data: Analysis ---------------------------------------------------
 
-write_delim(corpusDat %>% 
-              select(Variant, Adjectives) %>% 
-              as.data.frame(), 
-            file = "./Data/AdjectiveList.txt", 
-            delim = "\t")
+# (1) File import
+
+adj_freq <- read_delim(file = "./Data/Adjective_Frequency_Raw.txt", 
+                       delim = "\t") |> 
+  rename(Frequencies = n)
 
 
-# Import DCA results back into the current session and create two new variables:
-# (1) grand-mean centered coll_strength & (2) standardized coll_strength
+# (2) Descriptive information 
 
-dca <- read_delim(file = "./Data/DCA_Corpus.txt", 
-                  delim = "\t") %>% 
-  mutate(Coll_Str_c = Coll_strength - mean(Coll_strength),
-         Coll_Str_s = (Coll_strength - mean(Coll_strength)) / sd(Coll_strength)
+# - instances of each variant
+
+adj_freq |> 
+  group_by(Variant) |> 
+  summarize(
+    sum = sum(Frequencies)
+    )
+
+# - calculate type and token frequencies
+
+adj_sm <- adj_freq |> 
+  filter(Variant != "Other")
+
+adj_sm |> 
+  distinct(Adjectives) |> 
+  count()
+
+adj_sm |> 
+  group_by(Variant) |> 
+  summarize(
+    type = n_distinct(Adjectives),
+    n    = sum(Frequencies), 
+    ttr  = (type/n) *100,
+    ) |> 
+  ungroup()
+
+
+# - calculate normalized entropy
+
+adj_sm |> 
+  group_by(Variant) |> 
+  summarize(
+    hnorm = hnorm(Frequencies)
+    )
+
+
+rm(adj_sm)
+
+
+# (3) Data preparation and ΔP calculation
+
+# - pivot the table to a wide format (each column = raw frequency)
+
+adj_freq <- adj_freq |>  
+  mutate(
+    Frequencies = as.double(Frequencies)
+    ) |>  
+  pivot_wider(
+    names_from = Variant, 
+    values_from = Frequencies
+    ) 
+
+
+# - Identify adjectives that appeared in *other* patterns
+#   NOTE: These *other* patterns have introductory-it as subject of 1st clause
+#         and adjective as predicate lemma
+
+adj_not_target <- adj_freq |>  
+  filter(if_all(.cols = c(Adj_to, Adj_that),
+                .fns  = ~is.na(.)
+                )
+         ) |>  
+  pull(Adjectives)
+
+
+# - replace NA with zero in adj_freq tibble
+
+adj_freq <- adj_freq |> 
+  mutate(across(.cols = where(is.numeric),
+                .fns = ~if_else(is.na(.), 0, .)
+                )
          )
 
 
+# - sort frequencies
+
+adj_freq |>
+  select(!Other) |> 
+  arrange(desc(Adj_to)) |> 
+  head(15)
+
+adj_freq |>
+  select(!Other) |> 
+  arrange(desc(Adj_that)) |> 
+  head(15)
 
 
+# - count shared types
+
+adj_freq |>  
+  filter(Adj_that > 0 & Adj_to > 0) |> 
+  summarize(
+    types = n_distinct(Adjectives)
+  )
 
 
+# - count unique types and hapaxes
+
+adj_freq |> 
+  filter(Adj_that > 0 & Adj_to == 0) |> 
+  summarize(
+    types = n_distinct(Adjectives)
+    )
+
+adj_freq |>  
+  filter(Adj_that == 1 & Adj_to == 0) |>  
+  summarize(
+    total = n_distinct(Adjectives)
+    )
 
 
-# Production results: Analysis -----------------------------------------------
+adj_freq |> 
+  filter(Adj_to > 0 & Adj_that == 0) |> 
+  summarize(
+    types = n_distinct(Adjectives)
+    )
+
+adj_freq |>  
+  filter(Adj_to == 1 & Adj_that == 0) |>  
+  summarize(
+    total = n_distinct(Adjectives)
+    )
 
 
-##### Preprocessing
+# - ΔP calculation
+# --- calculate raw co-occurrence frequencies in a two-by-two table
 
-# Read in file; remove white spaces in Response; re-code categories inside Variant
+adj_freq <- adj_freq |>  
+  rename_with(.cols = starts_with("Adj_"),
+              .fn = ~str_replace(., "Adj_", "freq_adj")
+              ) |> 
+  rename_with(.fn = tolower) |> 
+  rename(freq_other = other) |>  
+  mutate(
+    total = sum(freq_adjto) + sum(freq_adjthat) + sum(freq_other),
+    
+    #variant: adj_to
+    freq_not_adjto = freq_adjthat + freq_other,
+    other_words_adjto = sum(freq_adjto) - freq_adjto,
+    all_but_adjto = total - freq_adjto - freq_not_adjto - other_words_adjto,
+    
+    sum_adjto = sum(freq_adjto),
+    sum_not_adjto = sum(freq_adjthat + freq_other),
+    sum_adj_total_adjto = freq_adjto + freq_not_adjto,
+    sum_notadj_total_adjto = other_words_adjto + all_but_adjto,
+    not_adj_in_adjto = sum_adjto - sum_adj_total_adjto,
+    not_adj_not_adjto = sum_not_adjto - sum_adj_total_adjto,
+    
+    #variant: adj_that
+    freq_not_adjthat = freq_adjto + freq_other,
+    other_words_adjthat = sum(freq_adjthat) - freq_adjthat,
+    all_but_adjthat = total - freq_adjthat - freq_not_adjthat - other_words_adjthat,
+    
+    sum_adjthat = sum(freq_adjthat),
+    sum_not_adjthat = sum(freq_adjto + freq_other),
+    sum_adj_total_adjthat = freq_adjthat + freq_not_adjthat,
+    sum_notadj_total_adjthat = other_words_adjthat + all_but_adjthat,
+    not_adj_in_adjthat = sum_adjthat - sum_adj_total_adjthat,
+    not_adj_not_adjthat = sum_not_adjthat - sum_adj_total_adjthat,
+    
+    zero = 0
+    )
 
-produc_dat <- read_csv("./Data/Production_introIT.csv") %>% 
-  mutate(Response = str_to_lower(Response) %>% str_replace(., " ", ""),
-         Variant  = if_else(Variant == "Adj-that", "Adj_that", "Adj_to")
+
+# --- calculate Delta P values for each variant
+
+adj_freq <- adj_freq |>  
+  mutate(
+    
+    #Adj-to
+    adjto_DPwc = (freq_adjto / (freq_adjto + freq_not_adjto)) - 
+      (other_words_adjto / (other_words_adjto + all_but_adjto)),
+    
+    adjto_DPcw = (freq_adjto / (freq_adjto + other_words_adjto)) - 
+      (freq_not_adjto / (freq_not_adjto + all_but_adjto)),
+    
+    adjto_DPcw_upp = (sum_adj_total_adjto / (sum_adj_total_adjto + not_adj_in_adjto)) - 
+      (zero / (zero + sum_not_adjto)),
+    
+    adjto_DPcw_low = (zero / (zero + sum_adjto)) - 
+      (sum_adj_total_adjto / (sum_adj_total_adjto + not_adj_not_adjto)),
+    
+    adjto_DPcw_adjusted = (adjto_DPcw - adjto_DPcw_low) / (adjto_DPcw_upp - adjto_DPcw_low),
+    
+    
+    #Adj-that
+    adjthat_DPwc = (freq_adjthat / (freq_adjthat + freq_not_adjthat)) - 
+      (other_words_adjthat / (other_words_adjthat + all_but_adjthat)),
+    
+    adjthat_DPcw = (freq_adjthat / (freq_adjthat + other_words_adjthat)) - 
+      (freq_not_adjthat / (freq_not_adjthat + all_but_adjthat)),
+
+    adjthat_DPcw_upp = (sum_adj_total_adjthat / (sum_adj_total_adjthat + not_adj_in_adjthat)) - 
+      (zero / (zero + sum_not_adjthat)),
+    
+    adjthat_DPcw_low = (zero / (zero + sum_adjthat)) - 
+      (sum_adj_total_adjthat / (sum_adj_total_adjthat + not_adj_not_adjthat)),
+    
+    adjthat_DPcw_adjusted = (adjthat_DPcw - adjthat_DPcw_low) / (adjthat_DPcw_upp - adjthat_DPcw_low)
+    ) |>  
+  mutate(across(.cols = adjto_DPwc:adjthat_DPcw_adjusted,
+                .fns  = ~round(., digits = 3)
+                )
          )
 
 
-# Recode gender, NA to Not specified
+# --- mutate new column that sums each adjective's total raw frequency
+# --- keep relevant columns
 
-produc_dat <- produc_dat %>% 
-  mutate(Sex = if_else(is.na(Sex) == TRUE, "NotSpec", Sex)
+adj_freq <- adj_freq |>  
+  mutate(
+    freq_total = freq_adjto + freq_adjthat + freq_other
+    ) |>  
+  relocate(freq_total, .after = freq_other) |>  
+  select(
+    adjectives, freq_adjto, freq_adjthat, freq_other, freq_total, 
+    ends_with("_DPwc"),
+    ends_with("_DPcw"), 
+    ends_with("adjusted")
+    )
+
+
+# --- remove adjectives not in the two target variants
+
+adj_freq <- adj_freq |>  
+  filter(!(adjectives %in% adj_not_target)
          )
 
+rm(adj_not_target)
+
+
+# --- sort adjectives by their Delta P scores
+
+adj_freq |> 
+  arrange(desc(adjthat_DPcw), desc(adjthat_DPcw_adjusted)) |>  
+  select(
+    adjectives, 
+    starts_with("freq"), 
+    starts_with("adjthat_")
+    ) |>  
+  head(15)
+
+adj_freq |>  
+  arrange(desc(adjto_DPcw), desc(adjto_DPcw_adjusted)) |>  
+  select(
+    adjectives, 
+    starts_with("freq"), 
+    starts_with("adjto_")
+    ) |> 
+  head(15)
 
 
 
 
-##### Basic information
 
-# Age and gender
 
-produc_dat %>% 
-  distinct(Participant, .keep_all = TRUE) %>% 
-  group_by(L1) %>% 
-  summarize(m = mean(Age, na.rm = TRUE), 
-            sd = sd(Age, na.rm = TRUE)
-            ) %>% 
+
+
+# 3. Production data: Analysis --------------------------------------------
+
+# (1) Data preparation
+
+# --- lowercase answers & remove spaces in the column Response
+# --- make intro-it variants in the column Variant consistent with corpus file
+
+produc_dat <- read_csv("./Data/Production_introIT.csv") |> 
+  mutate(
+    Response = str_to_lower(Response),
+    Response = str_replace(Response, " ", ""),
+    Variant  = if_else(Variant == "Adj-that", "Adj_that", "Adj_to")
+    )
+
+
+# --- convert NA in gender to Not specified
+
+produc_dat <- produc_dat |>  
+  mutate(
+    Sex = if_else(is.na(Sex) == TRUE, "NotSpec", Sex)
+    )
+
+
+# (2) Summarize demographic data: age, gender, education, and L2 proficiency
+
+produc_dat |>  
+  distinct(Participant, .keep_all = TRUE) |>  
+  group_by(L1) |>  
+  summarize(
+    m = mean(Age, na.rm = TRUE),
+    sd = sd(Age, na.rm = TRUE)
+    ) |>  
+  ungroup()
+
+produc_dat |>  
+  distinct(Participant, .keep_all = TRUE) |>  
+  group_by(L1, Sex) |> 
+  count() |> 
+  ungroup()
+
+produc_dat |>  
+  distinct(Participant, .keep_all = TRUE) |>  
+  group_by(L1, Degree) |>  
+  count() |> 
+  ungroup()
+
+produc_dat |>  
+  filter(L1 == "Thai") |>  
+  distinct(Participant, .keep_all = TRUE) |>  
+  summarize(
+    m = mean(TestScore, na.rm = TRUE),
+    sd = sd(TestScore, na.rm = TRUE),
+    min = min(TestScore, na.rm = TRUE),
+    max = max(TestScore, na.rm = TRUE) 
+    )
+
+
+# (3) Summarize experiment information
+
+# --- % of incomplete trials (misspelled, incomplete, non-adj responses)
+
+produc_dat |>  
+  filter(Incomplete == 1) |>  
+  summarize(
+    n = n(),
+    pt = ( n/nrow(produc_dat) ) * 100
+    )
+
+produc_dat |>  
+  filter(Incomplete == 1) |> 
+  group_by(L1) |>  
+  summarize(n = n()) |> 
   ungroup()
 
 
-produc_dat %>% 
-  distinct(Participant, .keep_all = TRUE) %>% 
-  group_by(L1, Sex) %>% 
-  count() %>% 
+# --- % of past-participle responses
+
+produc_dat |>  
+  filter(Incomplete != 1) |>  
+  count(L1, Past_participle) |>  
+  ungroup() |>  
+  select(L1, n) |>  
+  group_by(L1) |>  
+  mutate(
+    percent = (n/sum(n)) * 100
+    )
+
+
+# --- count of remaining total
+
+produc_dat |> 
+  filter(Past_participle == 0 & Incomplete == 0) |> 
+  group_by(L1) |>  
+  summarize(total = n() ) |>  
   ungroup()
 
 
-# Counts
+# --- average responses per variant and L1
 
-# 1) % of incomplete trials (misspelled, incomplete, non-adj responses)
-
-produc_dat %>% 
-  filter(Incomplete == 1) %>% 
-  summarize(n = n(), 
-            pt = (n/1057) * 100)
-
-
-produc_dat %>% 
-  filter(Incomplete == 1) %>%
-  group_by(L1) %>% 
-  summarize(n = n()) %>% 
+produc_dat |>  
+  filter(Past_participle == 0 & Incomplete == 0) |>  
+  count(L1, Participant, Variant) |> 
+  ungroup() |> 
+  group_by(L1, Variant) |> 
+  summarize(
+    m  = mean(n),
+    sd = sd(n)
+    ) |> 
   ungroup()
 
 
-# 2) % of past-participle responses
+# --- number of types (per variant or in total)
 
-produc_dat %>% 
-  filter(Incomplete != 1) %>% 
-  group_by(L1, Past_participle) %>% 
-  count() %>% 
-  ungroup() %>% 
-  select(L1, n) %>% 
-  group_by(L1) %>% 
-  mutate(percent = (n/sum(n)) * 100
+produc_dat |>  
+  filter(Past_participle == 0 & Incomplete == 0) |> 
+  select(Variant, Response) |> 
+  group_by(Variant) |>  
+  summarize(
+    type = n_distinct(Response)
+    ) |>  
+  ungroup()
+
+produc_dat |>  
+  filter(Past_participle == 0 & Incomplete == 0) |> 
+  select(Variant, Response) |>  
+  summarize(type_total = n_distinct(Response)) |>  
+  ungroup()
+
+
+# (4) Remove unwanted items and count 
+
+# --- remove participles and incomplete items
+
+dat <- produc_dat |>  
+  filter(Past_participle == 0 & Incomplete == 0) |>  
+  select(!(Past_participle:Incomplete) )
+
+
+# --- count Elicited adjectives
+# --- in total, 281 types with five most frequent items being
+# --- important (53), necessary (29), obvious (26), likely (25), possible (24)
+
+adj_list <- dat |>  
+  count(Response, Variant) |>  
+  pivot_wider(names_from = Variant, 
+              values_from = n
+              ) |>  
+  mutate(across(.cols = where(is.numeric),
+                .fns  = ~as.double(.)
+                )
+         ) |>  
+  mutate(across(.cols = where(is.numeric),
+                .fns  = ~if_else(is.na(.), 0, .)
+                )
          )
 
+adj_list |>  
+  arrange(-Adj_to)
 
-# 3) count of remaining total
-
-produc_dat %>% 
-  filter(Past_participle == 0 & Incomplete == 0) %>%
-  group_by(L1) %>% 
-  summarize(total = n() ) %>% 
-  ungroup()
+adj_list |>  
+  arrange(-Adj_that)
 
 
-# 4) average of responses per variant per L1?
-
-produc_dat %>% 
-  filter(Past_participle == 0 & Incomplete == 0) %>% 
-  group_by(L1, Participant, Variant) %>% 
-  count() %>% 
-  ungroup() %>% 
-  group_by(L1, Variant) %>% 
-  summarize(m = mean(n),
-            sd = sd(n)
-            ) %>% 
-  ungroup()
+rm(adj_list)
 
 
-# 5) number of types (per variant or in total)
+# --- count number of items per participants
 
-produc_dat %>% 
-  filter(Past_participle == 0 & Incomplete == 0) %>%
-  select(Variant, Response) %>% 
-  group_by(Variant) %>% 
-  summarize(type = n_distinct(Response)) %>% 
-  ungroup()
+dat |>  
+  count(Participant) |>  
+  mutate(perc = (n/sum(n)) * 100) |>  
+  arrange(desc(n)) |>  
+  head(3)
 
-
-produc_dat %>% 
-  filter(Past_participle == 0 & Incomplete == 0) %>%
-  select(Variant, Response) %>% 
-  summarize(type_total = n_distinct(Response)) %>% 
-  ungroup()
+dat |>  
+  count(Participant) |>  
+  mutate(perc = (n/sum(n)) * 100) |>  
+  arrange(desc(n)) |>  
+  tail(3)
 
 
 
 
 
-##### Main statistical analysis
-
-# Join tibbles (production data and dca data)
-
-dat <- left_join(produc_dat %>% 
-                   filter(Past_participle == 0 & Incomplete == 0) %>% 
-                   select(!c(Past_participle, Incomplete)
-                          ), 
-                 dca %>% 
-                   select(Adjectives, Preference, starts_with("Coll")
-                          ), 
-                 by = c("Response" = "Adjectives")
-                 )
 
 
-# Code whether each response was a distinctive collexeme of a given variant
-# Remove 116 items that were not in DCA from analysis; from 901 down to 785 rows
 
-dat %>% 
-  filter(is.na(Preference)) %>% 
+# 4. Mixed-effects modeling -----------------------------------------------
+
+# (1) Join two tibbles: elicitation and corpus data
+
+# NOTE: a column "cue" created to indicate if each adjective is cued by Adj_to 
+#       or Adj_that. DPwc scores, not DPcw, used as a test condition below as
+#       some items with low frequencies (e.g., abstract) had the same DPcw for 
+#       two variants, after rounding
+
+item_dat <- left_join(dat, 
+                      adj_freq |>  
+                        mutate(cue = if_else(adjto_DPwc > adjthat_DPwc, 
+                                             "Adj_to", "Adj_that"
+                                             )
+                               ), 
+                      by = c("Response" = "adjectives") 
+                      )
+
+
+# --- mutate new columns:
+# (1) DPcw (delta P w/ construction as cue). If a word is cued by Adj-to, 
+#     assign DPcw_adjusted of that word in Adj-to, else Adj-that
+# (2) frequencies in "preferred" variant. If a word is cued by Adj-to, assign
+#     the frequency of that word in that variant
+
+# This is irrespective of the frames in which participants supplied adjectives
+
+item_dat <- item_dat |> 
+  mutate(
+    DPcw         = if_else(cue == "Adj_that", 
+                           adjthat_DPcw_adjusted, 
+                           adjto_DPcw_adjusted
+                           ),
+    freq_variant = if_else(cue == "Adj_that", 
+                           freq_adjthat, 
+                           freq_adjto
+                           )
+    ) |>  
+  select(!c(freq_adjto:freq_other, 
+            adjto_DPwc:adjthat_DPcw_adjusted
+            )
+         ) |> 
+  relocate(c(freq_variant, DPcw), .after = freq_total)
+
+
+# --- count answers not attested in corpus
+
+item_dat |> 
+  filter(if_all(.cols = freq_total:cue,
+                .fns  = ~is.na(.))
+         ) |>  
   summarize(n = n())
-  
-dat <- dat %>% 
-  filter(!is.na(Preference) 
-         ) %>% 
-  mutate(Match = if_else(Variant == Preference, 1, 0)
-         ) %>% 
-  relocate(Match, .after = Preference)
 
 
-# Check no. of types
+item_dat |>  
+  filter(if_all(.cols = freq_total:cue, 
+                .fns  = ~is.na(.)
+                )
+         ) |>  
+  select(Response) |>  
+  count(Response) |>  
+  arrange(desc(n))
 
-dat %>% 
-  summarize(type = n_distinct(Response) )
+
+# --- remove responses not in corpus data
+# --- use NAs in columns freq_total to cue to identify those responses 
+
+item_dat_sm <- item_dat |>  
+  filter(if_all(.cols = freq_total:cue,
+                .fns  = ~!is.na(.)
+                )
+         )
 
 
-dat %>% 
-  filter(Match == 1) %>% 
-  group_by(L1, Variant) %>% 
-  summarize(type = n_distinct(Response), 
-            n = n(), 
-            TTR = (type/n)*100) %>% 
+# --- visualize: histograms of DP
+
+item_dat_sm |>  
+  filter(cue == "Adj_that") |> 
+  ggplot(aes(x = DPcw)) +
+  geom_histogram()
+
+item_dat_sm |>  
+  filter(cue == "Adj_to") |> 
+  ggplot(aes(x = DPcw)) +
+  geom_histogram()
+
+
+# --- mutate outcome variable: "Match"
+# --- Did each elicited response "fit" the frame?
+
+item_dat_sm <- item_dat_sm |>  
+  mutate(
+    match = if_else(Variant == cue, 1, 0)
+    )
+
+
+# --- count number of types & tokens and calculate TTR
+# --- 183 types remain; 63 types = hapax legomena
+
+item_dat_sm |>  
+  summarize(
+    type = n_distinct(Response) 
+    )
+
+item_dat_sm |>  
+  count(Response) |>  
+  ungroup() |>  
+  arrange(desc(n)) |>  
+  filter(n == 1) |>  
+  summarize(
+    hapax = n_distinct(Response)
+    )
+
+item_dat_sm |> 
+  group_by(L1, Variant) |>  
+  summarize(
+    type = n_distinct(Response),
+    n    = n(),
+    TTR  = (type/n)
+    ) |>  
   ungroup()
 
 
-# After cases are dropped, how many are left, by L1 and variant
+# --- obtain crosstabs
+# --- all combinations present; no counts of zero
+# --- evidently clear that Adj_that had more zero
+# --- and this mostly down to answers from Thai L1 participants
 
-dat %>% 
-  group_by(L1, Variant) %>% 
-  count() %>% 
-  ungroup()
+item_dat_sm |>  
+  count(L1, match)
+
+item_dat_sm |> 
+  count(Variant, match)
+
+item_dat_sm |>  
+  count(L1, Variant, match) 
+
+item_dat_sm |> 
+  count(Degree, match)
+
+item_dat_sm |>  
+  count(L1, Degree, match)
 
 
-# Mutate new columns
-# 1) Add order in which words appear, after responses not in DCA dropped
-# 2) Add type of prompt (is vs. seem)
+# --- visualize data
 
-dat <- dat %>% 
-  group_by(Participant, Variant) %>% 
-  mutate(Final_order = row_number()) %>% 
-  ungroup() %>% 
-  relocate(Final_order, .after = Frame) %>% 
-  mutate(Link_verb  = str_extract(Frame, pattern = ".+?(?=\\.)")
-         ) %>% 
+item_dat_sm |> 
+  distinct(Participant, .keep_all = TRUE) |>  
+  ggplot(aes(x = AWEQ)) +
+  geom_histogram()
+
+# Left skewed: score of 5 most frequent
+
+
+ggplot(data = item_dat_sm, aes(x = Variant, y = match)) +
+  stat_summary(fun = mean, geom = "point") +
+  stat_summary(fun.data = mean_cl_boot, geom = "errorbar", width = 0.1) 
+
+ggplot(data = item_dat_sm, aes(x = Variant, y = match, color = L1)) +
+  stat_summary(fun = mean, geom = "point") +
+  stat_summary(fun.data = mean_cl_boot, geom = "errorbar", width = 0.1)
+
+ggplot(data = item_dat_sm, aes(x = L1, y = match, color = Variant)) +
+  stat_summary(fun = mean, geom = "point") +
+  stat_summary(fun.data = mean_cl_boot, geom = "errorbar", width = 0.1) +
+  facet_wrap(~ Degree)
+
+
+# --- mutate new columns
+# --- 1) Add order in which words appear
+# --- 2) Add type of prompt (is vs. seem)
+
+item_dat_sm <- item_dat_sm |> 
+  group_by(Participant, Variant) |>  
+  mutate(
+    Final_order = row_number()
+    ) |>  
+  ungroup() |>  
+  relocate(Final_order, .before = Response) |>  
+  mutate(
+    Link_verb  = str_extract(Frame, pattern = ".+?(?=\\.)")
+    ) |>  
   relocate(Link_verb, .after = Variant)
 
 
-# Check if number of items differed by L1 and variant
-# Step 1: Create a dataframe
+# --- visualize: trial number normally distributed looking
+# --- (though the shape of responses for Adj-that didn't look normal-ish)
+# --- we will not transform this variable
 
-num_dat <- dat %>% 
-  group_by(L1, Participant, Variant) %>% 
-  count()
+item_dat_sm |>  
+  count(Participant, Variant) |>  
+  ggplot(aes(x = n)) +
+  geom_histogram()
 
 
-num_dat %>% 
-  group_by(L1, Variant) %>% 
-  summarize(m = mean(n),
-            sd = sd(n)
+# --- check frequencies of adjectives in production data
+# --- combine those hapax legomena into one category "other" in Response_rnd
+
+item_dat_sm <- item_dat_sm |> 
+  group_by(Response) |>  
+  mutate(n = n()) |>  
+  mutate(
+    Response_rnd = if_else(n == 1, "other", Response)
+    ) |>  
+  ungroup() |> 
+  relocate(Response_rnd, .after = Response) |>  
+  select(!n)
+
+
+# --- standardize AWEQ
+# --- here we used the entire data set to calculate mean() and sd()
+# --- another option would be to use distinct participants for calculation
+# --- the values obtained would differ only in 2nd or 3rd decimal place
+
+# NOTE: we didn't log(AWEQ, base = 2) --> doesn't change shape of distribution
+
+item_dat_sm <- item_dat_sm |>  
+  mutate(
+    AWEQ_s = (AWEQ - mean(AWEQ, na.rm = TRUE)) / sd(AWEQ, na.rm = TRUE) 
+    ) |> 
+  relocate(AWEQ_s, .after = AWEQ)
+
+
+# --- standardize trial order
+
+item_dat_sm <- item_dat_sm |>  
+  mutate(
+    Final_s = (Final_order - mean(Final_order)) / sd(Final_order)
+    ) |>  
+  relocate(Final_s, .after = Final_order)
+
+
+item_dat_sm |>  
+  summarize(across(.cols = c(AWEQ, Final_order),
+                   .fns  = mean)
             )
 
+# AWE-Q: 3.52 out of 5
+# Average number of answers: 3.55 responses
 
-# Step 2: 
+
+item_dat_sm <- item_dat_sm |> 
+  mutate(across(.cols = c(AWEQ, AWEQ_s, Final_s),
+                .fns  = ~round(., digits = 3)
+                )
+         )
+
+
+# --- log & standardize logged frequencies
+# --- logging DPcw did not change the shape of the distribution
+
+item_dat_sm <- item_dat_sm |>  
+  mutate(across(.cols  = c(freq_total, freq_variant),
+                .fns   = ~log(., base = 2),
+                .names = "{.col}_log"
+                )
+         ) |>  
+  mutate(across(.cols = c(ends_with("_log"), DPcw),
+                .fns  = ~ (. - mean(.)) / sd(.),
+                .names = "{.col}_s")
+         ) |> 
+  mutate(across(.cols = c(contains("_log"), DPcw_s),
+                .fns  = ~round(., digits = 3)
+                )
+         ) |>  
+  relocate(c(freq_total_log, 
+             freq_total_log_s, 
+             freq_variant_log, 
+             freq_variant_log_s
+             ), 
+           .after = freq_variant) |>  
+  relocate(DPcw_s, .after = DPcw)
+
+
+# --- visualize data: Spine plots
+# --- spine plots to visualize categorical DV and some target continuous IV
+
+spineplot(factor(match) ~ freq_variant_log_s, data = item_dat_sm,
+          ylab = "Matched responses", xlab = "Standardized logged freq")
+
+spineplot(factor(match) ~ freq_total_log_s, data = item_dat_sm,
+          ylab = "Matched responses", xlab = "Standardized logged total freq")
+
+spineplot(factor(match) ~ DPcw_s, data = item_dat_sm,
+          ylab = "Matched responses", xlab = "Standardized DP Cx as cue")
+
+spineplot(factor(match) ~ AWEQ_s, data = item_dat_sm,
+          ylab = "Matched responses", xlab = "Standardized writing exp.")
+
+spineplot(factor(match) ~ Final_s, data = item_dat_sm,
+          ylab = "Matched responses", xlab = "Standardized answer order")
+
+
+
+
+
+# (2) Check: Linear mixed-effects model
+#     Did English L1 and Thai L1 participants produced roughly same #items?
+
+# 2.1 create a data frame (no. of items as outcome)
+
+num_dat <- item_dat_sm |>  
+  count(L1, Participant, Variant) |>  
+  ungroup()
+
+num_dat |>  
+  group_by(L1, Variant) |>  
+  summarize(
+    m = mean(n),
+    sd = sd(n)
+    )
+
+
+# 2.2 run a linear model
 
 model1 <- lmer(n ~ L1 * Variant + (1 | Participant), 
                contrasts = list(Variant = contr.sum, L1 = contr.sum),
-               data = num_dat)
+               data = num_dat
+               )
 
 summary(model1)
 
 rm(num_dat, model1)
 
-
-# Check frequencies of adjectives in production data
-# Combine those hapax legomena into one category "other"
-# Response_rnd used for random intercept for item
-
-dat <- dat %>% 
-  group_by(Response) %>% 
-  mutate(n = n()) %>% 
-  mutate(Response_rnd = if_else(n == 1, "other", Response)
-         ) %>% 
-  ungroup() %>% 
-  relocate(Response_rnd, .after = Response) %>% 
-  select(!n)
-
-
-# Grand-mean center & scale AWEQ
-
-dat <- dat %>% 
-  mutate(AWEQ_c = AWEQ - mean(AWEQ),
-         AWEQ_s = (AWEQ - mean(AWEQ)) / sd(AWEQ) 
-         ) %>% 
-  relocate(c(AWEQ_c, AWEQ_s), .after = AWEQ)
-  
-
-# Grand-mean center trial order [Final_order]
-
-dat <- dat %>% 
-  mutate(Final_c = Final_order - mean(Final_order),
-         Final_s = (Final_order - mean(Final_order)) / sd(Final_order)
-         ) %>% 
-  relocate(c(Final_c, Final_s), .after = Final_order)
+# No. of items generated did not differ by neither L1, variant, nor their
+# interaction (p > 0.05)
 
 
 
 
-# Intercept-only model -----
 
-# Begin with a plot: correct proportion by participants, not exactly aligned with bernouli trials
-# This however shows there is substantial variability across subjects
-
-dat %>% 
-  group_by(Participant) %>% 
-  summarize(n = n(),
-            total = mean(Match),
-            se = sd(Match)/sqrt(n)
-            ) %>% 
-  mutate(se = if_else(is.na(se), 0, se),
-         ID = str_c("S",Participant)
-         ) %>%
-  ungroup() %>% 
-  ggplot(aes(x = factor(ID, levels = unique(ID)), y = total)) +
-  geom_pointrange(aes(ymin = total - se, ymax = total + se)) +
-  theme_bw() +
-  theme(text = element_text(size = 15),
-        axis.text.x = element_text(size = rel(0.6), angle = 60, vjust = 0.5),
-        axis.title = element_blank(),
-        panel.grid = element_blank(), 
-        panel.border = element_blank(),
-        axis.line.x = element_line(colour = "black", size = 0.5, linetype = "solid"),
-        axis.line.y = element_line(colour = "black", size = 0.5, linetype = "solid")
-        ) #+
-  ggsave("Proportion.png", width = 11, height = 11, dpi = 300)
+# (3) Build models
 
 
-# Run a model
+# ------------------------------ RQ 1 ------------------------------ #
 
-m0 <- glmer(Match ~ 1 + (1 | Participant) + (1 | Response_rnd),
-            data = dat,
-            family = binomial(link = "logit")
-            )
+# ----- Intercept-only model ----- #
 
+m0.glmer <- glmer(match ~ 1 + (1 | Participant) + (1 | Response_rnd),
+                  data = item_dat_sm,
+                  family = binomial(link = "logit")
+                  )
 
-# Calculate Intraclass correlation (ICC) for logistic model
+summary(m0.glmer)
 
-icc <- function(x) {
-  cal <- (x^2) / ( (x^2) + ( (pi^2) / 3) )
-  cal
-  }
+# In intercept-only model deviance = model misfit (Hox et al 2017)
+# Deviance 1044.7; SDs of participants and items = 0.34 and 0.24
+# There is variation that can be accounted for by predictors
 
-
-VarCorr(m0) %>% 
-  as_tibble() %>% 
-  mutate(icc = icc(sdcor)
-         )
+rm(m0.glmer)
 
 
-# Since there is no predictor, deviance can be taken to suggest model misfit (Hox et al 2017)
-# Deviance 1046.1
 
-  
+# ----- Model fitting ----- #
 
-
-# Model building ----- 
-
-# We begin by adding level-1 predictors, then level-2 predictors, then intra-level interactions
-
-
+# We begin by adding level-1 & level-2 predictors and intra-level interactions
 # Create sum contrasts
 
-dat <- dat %>% 
+item_dat_sm <- item_dat_sm |>  
   mutate(across(.cols = c(Degree, L1, Variant, Link_verb),
-                .fns  = ~as.factor(.)
+                .fns  = ~factor(.)
                 )
          )
 
-contrasts(dat$Variant)   <- contr.sum(2)
-contrasts(dat$Link_verb) <- contr.sum(2)
-contrasts(dat$Degree)    <- contr.sum(2)
-contrasts(dat$L1)        <- contr.sum(2)
+contrasts(item_dat_sm$Variant)   <- contr.sum(2)
+contrasts(item_dat_sm$Link_verb) <- contr.sum(2)
+contrasts(item_dat_sm$Degree)    <- contr.sum(2)
+contrasts(item_dat_sm$L1)        <- contr.sum(2)
 
 
-# Run a model: m1 with level-1 predictors
 
-m1 <- glmer(Match ~ 1 + Final_s + Link_verb + Variant + Coll_Str_s + 
+# ---
+# Run a model: m1s with level-1 predictors
+
+# We added level-1 predictors of interest; we had only one association measure,
+# DPcw, since our task set-up was such that construction cued adjectives. Below,
+# we added frequency/association measures one at a time
+
+m1.1 <- glmer(match ~ 1 + Final_s + Link_verb + Variant +
                 (1 | Participant) + (1 | Response_rnd),
-              data = dat,
-              family = binomial(link = "logit")
+              data = item_dat_sm,
+              family = binomial(link = "logit"),
+              control = glmerControl(optimizer = "bobyqa",
+                                     optCtrl = list(maxfun = 1e5)
+                                     )
               )
 
-summary(m1)
+
+car::vif(m1.1) |>  
+  as_tibble(rownames = "predictors")
+
+# VIF scores: almost equal 1
 
 
-# Run a model: m2 with level-1 and level-2 predictors 
 
-m2 <- glmer(Match ~ 1 + Final_s + Link_verb + Variant + Coll_Str_s +
-              L1 + AWEQ_s + (1 | Participant) + (1 | Response_rnd),
-            data = dat,
-            family = binomial(link = "logit")
-            )
+m1.2 <- update(m1.1, . ~ . + DPcw_s)
+summary(m1.2)
 
-# We did include degree but a model with this predictor wasn't significantly different from m2
-# X^2(1) = 0.259, p = 0.611
+car::vif(m1.2) |> 
+  as_tibble(rownames = "predictors")
 
-
-# Run a model: m3 with intra-level interaction
-# An interaction between L1 and AWEQ not significant, nor was each of 2 variables
-
-# a model with an interaction between L1 and AWEQ did not improve fit (when compared to m3)
-# X^2(1) = 1.711, p = 0.191
-
-m3 <- glmer(Match ~ 1 + Final_s + Link_verb * Variant * Coll_Str_s +
-              L1 + AWEQ_s + (1 | Participant) + (1 | Response_rnd),
-            data = dat,
-            family = binomial(link = "logit")
-            )
+# DPcw_s independently significant, as well as trial order and variant
+# VIF scores: still close to 1
 
 
-# Run a model: Add theoretically relevant varying slopes
-# Participants: Variant and Coll_str_s 
-# Response_rnd (items): L1
 
-m4 <- glmer(Match ~ 1 + Final_s + Link_verb * Variant * Coll_Str_s + L1 + 
-              AWEQ_s + (1 + Variant * Coll_Str_s | Participant) +
-              (1 + L1 | Response_rnd),
-            data = dat,
-            family = binomial(link = "logit"),
-            control = glmerControl(optimizer = "bobyqa", 
-                                   optCtrl = list(maxfun = 2e5)
-                                   )
-            )
+m1.3 <- update(m1.2, . ~ . + freq_variant_log_s)
+summary(m1.3)
+
+car::vif(m1.3) |> 
+  as_tibble(rownames = "predictors")
+
+# DPcw_s remained significant, freq_variant wasn't
+# VIF scores of freq_variant and DPcw were 1.12 and 1.05; still close to 1
 
 
-m5 <- glmer(Match ~ 1 + Final_s + Link_verb * Variant * Coll_Str_s + L1 + 
-              AWEQ_s + (1 + Variant * Coll_Str_s | Participant) +
-              (1 | Response_rnd),
-            data = dat,
-            family = binomial(link = "logit"),
-            control = glmerControl(optimizer = "bobyqa", 
-                                   optCtrl = list(maxfun = 2e5)
-                                   )
-            )
+
+m1.4 <- update(m1.3, . ~ . + freq_total_log_s)
+summary(m1.4)
+
+car::vif(m1.4) |> 
+  as_tibble(rownames = "predictors")
+
+# VIF scores of the two frequency measures went above 100
+# Since our focus was primarily on freq_variant, we went back to m1.3
 
 
-m6 <- glmer(Match ~ 1 + Final_s + Link_verb * Variant * Coll_Str_s + L1 + 
-              AWEQ_s + (1 + Variant + Coll_Str_s | Participant) +
-              (1 | Response_rnd),
-            data = dat,
-            family = binomial(link = "logit"),
-            control = glmerControl(optimizer = "bobyqa", 
-                                   optCtrl = list(maxfun = 2e5)
-                                   )
-            )
+
+# ---
+# Run a model: m2s with level-2 predictors
+
+m2.1 <- update(m1.3, . ~ . + Degree + L1 + AWEQ_s)
+summary(m2.1)
+
+car::vif(m2.1) |> 
+  as_tibble(rownames = "predictors")
+
+# VIFs: close to 1 for all predictors
 
 
-m7 <- glmer(Match ~ 1 + Final_s + Link_verb * Variant * Coll_Str_s + L1 + 
-              AWEQ_s + (1 + Variant | Participant) +
-              (1 | Response_rnd),
-            data = dat,
-            family = binomial(link = "logit"),
-            control = glmerControl(optimizer = "bobyqa", 
-                                   optCtrl = list(maxfun = 2e5)
-                                   )
-            )
+
+# ---
+# Run a model: intra-level interactions
+
+m3.1 <- update(m2.1, . ~ . 
+               + freq_variant_log_s:DPcw_s)
+summary(m3.1)
+
+car::vif(m3.1) |> 
+  as_tibble(rownames = "predictors")
+
+# VIF of freq_variant_log_s and DPcw_s still around 1 while that of the
+# interaction was 1.33
 
 
-m8 <- glmer(Match ~ 1 + Final_s + Link_verb * Variant * Coll_Str_s + L1 + 
-              AWEQ_s + (1 + Coll_Str_s | Participant) +
-              (1 | Response_rnd),
-            data = dat,
-            family = binomial(link = "logit"),
-            control = glmerControl(optimizer = "bobyqa", 
-                                   optCtrl = list(maxfun = 2e5)
-                                   )
-            )
+
+m3.2 <- update(m3.1, . ~ . 
+               + Variant:freq_variant_log_s 
+               + Variant:DPcw_s)
+
+summary(m3.2)
+
+car::vif(m3.2) |> 
+  as_tibble(rownames = "predictors")
+
+# All VIFs still 1 (range: 1.01-1.37)
 
 
-# Adding random slopes resulted in overfitting (a singular fit was reported)
-# We thus adopted m3
 
-rm(m0, m1, m2, m4, m5, m6, m7, m8)
+# ---
+# Run a model: Add theoretically relevant varying slopes for predictors of int.
+# Participants: Variant, freq_variant_log_s, and DPcw_s 
+# Response_rnd (items): L1 
 
+m4.1 <- update(m3.2, . ~ . 
+               - (1 | Participant) 
+               - (1 | Response_rnd) 
+               + (1 + Variant + freq_variant_log_s + DPcw_s | Participant)
+               + (1 + L1 | Response_rnd)
+               )
 
-# Run a model: Add cross-level interaction 
-# We had only one cross-level interaction term (L1:Variant).
-# Additional interaction terms did not improve model fit.
+summary(m4.1)
 
-m9 <- glmer(Match ~ 1 + Final_s + Link_verb * Variant * Coll_Str_s +
-              L1 + L1:Variant + AWEQ_s + (1 | Participant) +
-              (1 | Response_rnd),
-            data = dat,
-            family = binomial(link = "logit"),
-            control = glmerControl(optimizer = "bobyqa", 
-                                   optCtrl = list(maxfun = 2e5)
-                                   )
-            )
+# Impression:
+# Singular fit reported
 
+# In the two sources of random-effects variation, Participant and Response_rnd, 
+# high (and perfect) correlation observed. Plus, a few components of the 
+# random-effect structure had small SDs
 
-m10 <- glmer(Match ~ 1 + Final_s + Link_verb * Variant * Coll_Str_s +
-               L1 + L1:Variant + L1:Coll_Str_s + AWEQ_s + 
-               (1 | Participant) + (1 | Response_rnd),
-             data = dat,
-             family = binomial(link = "logit"),
-             control = glmerControl(optimizer = "bobyqa", 
-                                    optCtrl = list(maxfun = 2e5)
-                                    )
-             )
+# Run a principal components analysis (PCA) on the random-effects structure
 
-# model with the 3-way interaction (L1:Variant:Coll_Str_s) not shown
+summary(rePCA(m4.1))
 
-anova(m3, m9)
-anova(m9, m10)      #likelihood ratio test: not significant
+# The 1st row of each matrix (= SD) indicates that (1) we need only 1
+# element for Response_rnd and at most 2 for Participant
+# We begin with the elements that had the smallest SD; L1 for Response_rnd
 
 
-rm(m3, m9, m10)
+
+m4.2 <- update(m4.1, . ~ .
+               - (1 + L1 | Response_rnd)
+               + (1 | Response_rnd)
+               )
+
+summary(m4.2)
 
 
-# Run a model: Rerun m9 and draw inference
+# LRT supported dropping the random slope for L1
+# X^2(2) = 0.566, p = 0.754
+# AIC and BIC of m4.2 are also smaller (and deviance was only slightly bigger)
 
-m_final <- glmer(Match ~ 1 + Final_s + Link_verb * Variant * Coll_Str_s +
-                   L1 + L1:Variant + AWEQ_s + (1 | Participant) +
-                   (1 | Response_rnd),
-                 data = dat,
-                 family = binomial(link = "logit"),
-                 control = glmerControl(optimizer = "bobyqa", 
-                                        optCtrl = list(maxfun = 2e5)
-                                        )
-                 )
+anova(m4.2, m4.1, test = "Chisq")
 
 
-# Additional Analysis: Removing two participants
-# Two Thai L1 participants (no. 53 & 59) may have been early learners of English
-# To ensure that results didn't change with or without these two participants
-# we dropped the two participants and re-ran the analysis
 
-dat2 <- dat %>% 
-  filter(!Participant %in% c(53, 59))
+# We simplify random-effects terms for Participant, beginning with smallest SD
+# which is DPcw
 
-m_subset <- glmer(Match ~ 1 + Final_s + Link_verb * Variant * Coll_Str_s +
-                    L1 + L1:Variant + AWEQ_s + (1 | Participant) +
-                    (1 | Response_rnd),
-                  data = dat2,
-                  family = binomial(link = "logit"),
-                  control = glmerControl(optimizer = "bobyqa", 
-                                         optCtrl = list(maxfun = 2e5)
-                                         )
+m4.3 <- update(m4.2, . ~ . 
+               - (1 + Variant + freq_variant_log_s + DPcw_s | Participant)
+               + (1 + Variant + freq_variant_log_s | Participant)
+               )
+
+summary(m4.3)
+
+# Deletion supported by LRT, X^2(4) = 0.593, p = 0.964
+
+anova(m4.3, m4.2, test = "Chisq")
+
+
+
+# In the next step, we dropped random slope for freq_variant, which LRT supports, 
+# X^2(3) = 1.211, p = 750. Warning about singular fit also disappeared
+
+m4.4 <- update(m4.3, . ~ . 
+               - (1 + Variant + freq_variant_log_s | Participant)
+               + (1 + Variant | Participant)
+               )
+
+anova(m4.4, m4.3, test = "Chisq")
+
+
+
+# ---
+# Run a model: Add inter-level interaction terms
+# SD for Variant is substantial (0.96), so we include inter-level interaction
+
+m5.1 <- update(m4.4, . ~ . 
+               + L1:freq_variant_log_s 
+               + L1:DPcw_s
+               + L1:Variant
+               )
+
+summary(m5.1)
+
+car::vif(m5.1) |> 
+  as_tibble(rownames = "parameters")
+
+# VIFs are right around 1
+# SD of Variant (random slope) came down (from ~1.04 to ~0.97) but SD of
+# random intercept for participants went down to zero
+
+
+
+# ---
+# Test: Which predictors can be dropped? 
+
+(m5.1_dropped <- drop1(m5.1, test = "Chisq"))
+
+
+# (1) Two interaction terms (freq_variant_log_s:L1 and DPcw_s:L1) had largest 
+# p-value. They are dropped. 
+
+m6.1 <- update(m5.1, . ~ . 
+               - freq_variant_log_s:L1
+               - DPcw_s:L1
+               )
+
+
+# LRT: m5.1 wasn't better than m6.1, X^2(2) = 0.038, p = 0.981
+# Thus, we used m6.1
+
+anova(m6.1, m5.1, test = "Chisq")
+
+
+# Next, though AWEQ_s has the largest p-value among the predictors left, we will 
+# not drop it as it is part of our focus. Instead, we drop: 
+
+m6.2 <- update(m6.1, . ~ . 
+               - DPcw_s:freq_variant_log_s 
+               - Degree
+               - Link_verb
+               )
+
+anova(m6.2, m6.1, test = "Chisq")
+
+# LRT supports m6.2, X^2(3) = 3.178, p = 0.365. We then probe which predictors 
+# can additionally be dropped.
+
+
+(m6.2_dropped <- drop1(m6.2, test = "Chisq"))
+
+
+
+# ---
+# Test: Whether the effect of AWEQ is curved, per reviewer's comment
+
+m6.3 <- update(m6.2, . ~ . 
+               - AWEQ_s
+               + poly(AWEQ_s, 2)
+               )
+
+# We didn't find evidence that AWEQ_s had a curved effect
+# m6.3 wasn't better, X^2(1) = 0.382, p = 0.536
+# Thus, we go ahead and use m6.2 as our "final" model
+
+anova(m6.3, m6.2, test = "Chisq")
+
+
+car::vif(m6.2) |> 
+  as_tibble(rownames = "parameters")
+
+# All VIF scores are right around 1
+
+
+
+m.final <- m6.2
+
+rm(m1.1, m1.2, m1.3, m1.4, m2.1, m3.1, m3.2, 
+   m4.1, m4.2, m4.3, m4.4,
+   m5.1, m5.1_dropped,
+   m6.1, m6.2, m6.2_dropped, m6.3)
+
+
+
+
+# ----- Model interpretation ----- #
+
+# Test: whether final model is better than the null model
+# The null model --> intercept + random-effect components of final model
+
+m.null <- glmer(match ~ 1 + (1 | Response_rnd) + (1 + Variant | Participant),
+                data = item_dat_sm,
+                family = binomial(link = "logit")
+                )
+
+
+anova(m.final, m.null, test = "Chisq")
+
+# m.final significantly different from m.null, X^2(9) = 179.81, p < 0.001
+
+AIC(m.final)
+AIC(m.null)
+
+rm(m.null)
+
+
+
+# ---
+# Obtain: marginal and conditional R^2
+# Marginal R^2 captures variance explained by fixed effects only; 
+# Conditional R^2 --> variance explained by fixed and random effects
+
+MuMIn::r.squaredGLMM(m.final)
+
+# marginal R^2 = 0.36
+# conditional R^2 = 0.52
+
+
+
+# ---
+# Obtain C score
+
+probs <-  1 / (1 + exp( -fitted(m.final) ) )
+Hmisc::somers2(probs, item_dat_sm$match)
+
+rm(probs)
+
+
+
+
+
+# ----- Additional analysis ----- #
+
+# Removing two participants
+# Two L1 Thai-L2 English participants (no. 53 & 59) may have been early 
+# learners of English. To ensure that results didn't change with or without 
+# these two participants, we dropped them and re-ran the analysis
+
+item_dat_sm2 <- item_dat_sm |>  
+  filter(!Participant %in% c(53, 59)
+         )
+
+m.two_engl2_out <- glmer(match ~ Final_s + Variant + DPcw_s + 
+                           freq_variant_log_s + L1 + AWEQ_s + 
+                           Variant:freq_variant_log_s + Variant:DPcw_s + 
+                           Variant:L1 +
+                           (1 + Variant | Participant) + (1 | Response_rnd),
+                         data = item_dat_sm2,
+                         family = binomial(link = "logit"),
+                         control = glmerControl(optimizer = "bobyqa", 
+                                                optCtrl = list(maxfun = 2e5)
+                                                )
+                         )
+
+summary(m.two_engl2_out)
+
+# dropping the two participants did not change the results
+# we therefore included these two participants in our analysis
+
+rm(item_dat_sm2, m.two_engl2_out)
+
+
+
+
+
+# ------------------------------ RQ 2 ------------------------------ #
+
+# ----- Data preparation ----- #
+
+# --- create a data frame with only Thai L1 participants
+# --- remove those that did not provide their TOEFL scores
+# --- grand mean-center and standardize TOEFL scores
+
+dat_thai <- item_dat_sm |>  
+  filter(L1 == "Thai") |>  
+  filter(!Participant %in% c(51, 66, 73, 79)
+         ) |>  
+  mutate(
+    TestScore_s = (TestScore - mean(TestScore)) / sd(TestScore)
+    ) |>  
+  relocate(TestScore_s, .after = TestScore)
+
+
+# --- standardize continuous variables
+
+dat_thai <- dat_thai |>  
+  mutate(
+    AWEQ_s = (AWEQ - mean(AWEQ, na.rm = TRUE)) / sd(AWEQ, na.rm = TRUE),
+    Final_s = (Final_order - mean(Final_order)) / sd(Final_order)
+    ) |>  
+  relocate(AWEQ_s, .after = AWEQ) |>
+  relocate(Final_s, .after = Final_order)
+
+
+dat_thai <- dat_thai |>  
+  mutate(across(.cols = c(ends_with("_log"), DPcw),
+                .fns  = ~ (. - mean(.)) / sd(.),
+                .names = "{.col}_s")
+         ) |> 
+  mutate(across(.cols = c(contains("_log"), 
+                          TestScore_s, AWEQ_s, Final_s, DPcw_s),
+                .fns  = ~round(., digits = 3)
+                )
+         ) |>  
+  relocate(freq_total_log_s, .after = freq_total_log) |> 
+  relocate(freq_variant_log_s, .after = freq_variant_log) |>  
+  relocate(DPcw_s, .after = DPcw)
+
+
+# --- re-code answers with frequency = 1 as "other"
+
+dat_thai <- dat_thai |>  
+  group_by(Response) |>  
+  mutate(n = n()) |>  
+  mutate(
+    Response_rnd = if_else(n == 1, "other", Response)
+    ) |>  
+  ungroup() |>  
+  relocate(Response_rnd, .after = Response) |> 
+  select(!n)
+
+
+
+# ----- Model fitting ----- #
+
+# Begin with the set of predictors from the m.final model
+# Here, L1 and related interactions dropped and TestScore_s added
+
+contrasts(dat_thai$Variant)   <- contr.sum(2)
+contrasts(dat_thai$Link_verb) <- contr.sum(2)
+
+
+m.thai1 = glmer(match ~ Final_s + Variant + DPcw_s + freq_variant_log_s + 
+                  AWEQ_s + TestScore_s + 
+                  Variant:freq_variant_log_s + Variant:DPcw_s + 
+                  (1 + Variant | Participant) + (1 | Response_rnd),
+                data = dat_thai,
+                family = binomial(link = "logit"),
+                control = glmerControl(optimizer = "bobyqa",
+                                       optCtrl = list(maxfun = 1e5) 
+                                       )
+                )
+
+
+# Singular fit reported
+
+summary(rePCA(m.thai1))
+
+# Principal component analysis on the random-effects structure revealed that
+# we only needed 1 element for Participant, and there's virtually no variation
+# in response_rnd
+
+m.thai2 <- update(m.thai1, . ~ .
+                  - (1 | Response_rnd)
                   )
 
-# dropping the two participants did not change the results substantially
-# L1 became significant though (from being marginally significant)
-# The estimate of L1 however rarely changed. We decided to retain participants
+anova(m.thai2, m.thai1, test = "Chisq")
 
-rm(dat2, m_subset)
+# LRT supports dropping the term, X^2(1) = 0, p = 1
 
 
+m.thai3 <- update(m.thai2, . ~ . 
+                  - (1 + Variant | Participant)
+                  + (1 | Participant)
+                  )
+
+anova(m.thai3, m.thai2, test = "Chisq")
+
+# LRT does not support dropping the term
+# all VIF are around 1
+
+car::vif(m.thai2) |>
+  as_tibble(rownames = "parameters")
 
 
-# Model building: L2 proficiency -----
 
-# 1) Create a dataframe with only Thai L1 participants
-#    Add average TOEFL score to 4 participants (who didn't provide info)
-#    Grand mean-center and standardize TOEFL scores
+# ---
+# Test: Which predictors can be dropped? 
 
-# NOTE: use %$% from magrittr to explode variable
-# NOTE: use pluck() from purr to pluck a single element from a vector
-# Since there's only one value in mean(), we can simply call pluck()
+(m.thai2_dropped <- drop1(m.thai2, test = "Chisq"))
 
-dat_thai <- dat %>% 
-  filter(L1 == "Thai") %>% 
+
+# trial order, AWE_Q, Variant:freq_variant_log_s can all be dropped
+# We will not drop TOEFL scores since it is our focus
+
+m.thai4 <- update(m.thai2, . ~ .
+                  - Final_s
+                  - AWEQ_s
+                  - Variant:freq_variant_log_s
+                  )
+
+anova(m.thai4, m.thai2, test = "Chisq")
+
+# LRT supports dropping, X^2(3) = 3.89, p = 0.274
+
+
+# We use m.thai4 as our "final" model
+# All VIF right around 1
+
+car::vif(m.thai4) |>
+  as_tibble(rownames = "parameters")
+
+m.th_final <- m.thai4
+
+
+rm(m.thai1, m.thai2, m.thai2_dropped, m.thai3, m.thai4)
+
+
+summary(m.th_final)
+
+
+
+
+
+# ----- Model interpretation ----- #
+
+# Test: whether final model is better than the null model
+# The null model --> intercept + random-effect components of final model
+
+m.th_null <- glmer(match ~ 1 + (1 + Variant | Participant),
+                   data = dat_thai,
+                   family = binomial(link = "logit")
+                   )
+
+
+anova(m.th_final, m.th_null, test = "Chisq")
+
+# m.th_final significantly different from m.null, X^2(5) = 86.87, p < 0.001
+
+AIC(m.th_final)
+AIC(m.th_null)
+
+rm(m.th_null)
+
+
+
+# ---
+# Obtain: marginal and conditional R^2
+# Marginal R^2 captures variance explained by fixed effects only; 
+# Conditional R^2 --> variance explained by fixed and random effects
+
+MuMIn::r.squaredGLMM(m.th_final)
+
+# marginal R^2 = 0.42
+# conditional R^2 = 0.60
+
+
+
+# ---
+# Obtain: C score
+
+probs <-  1 / (1 + exp( -fitted(m.th_final) ) )
+
+Hmisc::somers2(probs, dat_thai$match)
+
+rm(probs)
+
+
+
+
+
+# ----- Additional analysis ----- #
+
+# Four participants with missing TOEFL
+# NOTE: 1. Use %$% from magrittr to explode variable
+#       2. Use pluck() from purr to "pull" the mean value (= 102) from the 
+#          calculation and replace NA with that value
+
+dat_thai2 <- item_dat_sm |> 
+  filter(L1 == "Thai") |>  
   mutate(TestScore = if_else(is.na(TestScore) == TRUE, 
-                             dat %>% 
+                             dat |>  
                                distinct(Participant, .keep_all = TRUE) %$%
-                               mean(TestScore, na.rm = TRUE) %>% pluck(), 
+                               mean(TestScore, na.rm = TRUE) |>  
+                               pluck(), 
                              TestScore
-                             ) 
-         )
-
-
-dat_thai <- dat_thai %>% 
-  mutate(TestScore_s = (TestScore - mean(TestScore)) / sd(TestScore)
-         ) %>% 
+                             ) ,
+         TestScore_s = (TestScore - mean(TestScore)) / sd(TestScore)
+         ) |>  
   relocate(TestScore_s, .after = TestScore)
 
 
-# 2) Begin with the set of predictors from the m_final model
-#    Here, L1 is dropped (since there's no longer the other level to compare)
-#    Add proficiency to model and cross-level interaction terms
+m.thai_sm <- glmer(match ~ 1 + Variant + DPcw_s + freq_variant_log_s + 
+                     TestScore_s + Variant:DPcw_s +
+                     (1 + Variant | Participant),
+                   data = dat_thai2,
+                   family = binomial(link = "logit"),
+                   control = glmerControl(optimizer = "bobyqa", 
+                                          optCtrl = list(maxfun = 2e5)
+                                          )
+                   )
 
-m_th1 <- glmer(Match ~ 1 + Final_s + Link_verb * Variant * Coll_Str_s + AWEQ_s +
-                 TestScore_s + TestScore_s:Coll_Str_s + TestScore_s:Coll_Str_s:Variant +
-                 (1 | Participant) + (1 | Response_rnd),
-               data = dat_thai,
-               family = binomial(link = "logit"),
-               control = glmerControl(optimizer = "bobyqa", 
-                                      optCtrl = list(maxfun = 2e5)
-                                      )
-               )
-
-
-# None of the interaction terms were significant (including variant*strength)
-# Thus, we simplified the model. Plus, we dropped control variables
-# zooming in on main effects we're interested in
-
-m_th2 <- glmer(Match ~ 1 + Variant + Coll_Str_s + AWEQ_s + TestScore_s + 
-                 (1 | Participant) + (1 | Response_rnd),
-               data = dat_thai,
-               family = binomial(link = "logit"),
-               control = glmerControl(optimizer = "bobyqa", 
-                                      optCtrl = list(maxfun = 2e5)
-                                       )
-               )
-
-
-# Additional Analysis: Drop four participants without TOEFL scores
-
-dat_thai2 <- dat %>% 
-  filter(L1 == "Thai") %>% 
-  filter(!Participant %in% c(51, 66, 73, 79)) %>% 
-  mutate(TestScore_s = (TestScore - mean(TestScore, na.rm = T)) / sd(TestScore, na.rm = T)
-         ) %>% 
-  relocate(TestScore_s, .after = TestScore)
-
-
-m_th2_s <- glmer(Match ~ 1 + Variant + Coll_Str_s + AWEQ_s + TestScore_s + 
-                   (1 | Participant) + (1 | Response_rnd),
-                 data = dat_thai2,
-                 family = binomial(link = "logit"),
-                 control = glmerControl(optimizer = "bobyqa", 
-                                        optCtrl = list(maxfun = 2e5)
-                                        )
-                 )
-
-
-# No change in terms of significant predictors
-
-rm(dat_thai2, m_th2_s)
+summary(m.thai_sm)
+rm(dat_thai2, m.thai_sm)
 
 
 
 
 
-##### Reporting
-
-# crosstab
-
-dat %>% 
-  count(L1, Variant, Match) %>% 
-  group_by(L1, Variant) %>% 
-  mutate(Prop = (n/sum(n)) * 100 
-         )
+# (4) Summarize results
 
 
-# counts of matched responses (match = 1)
-# most common answers had high collostructional strength
+# ------------------------------ RQ 1 ------------------------------ #
 
-dat %>%
-  # filter(L1 == "Thai") %>%
-  group_by(Variant, Match, Coll_strength) %>% 
-  count(Response) %>% 
-  ungroup() %>% 
-  filter(Match != 0) %>% 
-  select(!Match) %>% 
-  group_by(Variant) %>% 
-  arrange(desc(n)) %>% 
-  ungroup() # %>% 
-  head(20)
+# --- obtain crosstab
+
+item_dat_sm |>  
+  count(L1, Variant, match) |>  
+  group_by(L1, Variant) |>  
+  mutate(
+    Prop = (n/sum(n)) * 100 
+    )
 
 
-# counts of matched responses by AWE-Q scores
-# we split participants into groups based on median AWE-Q scores
-# (we may also group by L1 but the patterns don't change)
+# --- count cued responses (match = 1)
+# --- all answers in L1 English group had relatively high Delta P
 
-dat %>% 
-  #group_by(L1) %>% 
-  mutate(AWEQ_group = if_else(AWEQ > median(AWEQ), "High", "Low"
-                              )
-         ) %>% 
-  group_by(AWEQ_group) %>% 
-  count(Match) %>% 
+item_dat_sm |> 
+  filter(L1 == "English") |> 
+  group_by(Variant, match, DPcw, freq_variant) |>  
+  count(Response) |> 
+  ungroup() |>  
+  filter(match != 0) |>  
+  select(!match) |>  
+  group_by(Variant) |>  
+  arrange(desc(n)) |>  
+  ungroup()
+
+item_dat_sm |> 
+  filter(L1 == "Thai") |> 
+  group_by(Variant, match, DPcw, freq_variant) |>  
+  count(Response) |> 
+  ungroup() |>  
+  filter(match != 0) |>  
+  select(!match) |>  
+  group_by(Variant) |>  
+  arrange(desc(n)) |>  
   ungroup()
 
 
-chisq.test(matrix(c(157, 235, 148, 245), nrow = 2, byrow = T))
+
+# --- count non-cued answers
+
+item_dat_sm |>
+  filter(L1 == "English") |> 
+  group_by(Variant, match, DPcw, freq_variant) |>  
+  count(Response) |>  
+  ungroup() |>  
+  filter(match == 0) |>  
+  select(!match) |>  
+  group_by(Variant) |> 
+  arrange(desc(n)) |> 
+  ungroup()
+
+item_dat_sm |>  
+  filter(L1 == "Thai") |> 
+  group_by(Variant, match, DPcw, freq_variant) |>  
+  count(Response) |>  
+  ungroup() |>  
+  filter(match == 0) |>  
+  select(!match) |>  
+  group_by(Variant) |> 
+  arrange(desc(n)) |> 
+  ungroup()
 
 
-# Extract fixed-effects estimates --- with fixef(mod_XXX) --- and 95% CI ---with confint(mod_XXX)
-# And finally calculate odd ratio with an exponent -- exp --
 
-confint(m_final, parm = "beta_", method = "Wald") %>% 
-  as_tibble(rownames = "Parameters") %>% 
-  mutate(Coeff = fixef(m_final)
-         ) %>% 
-  relocate(Coeff, .after = Parameters) #%>% 
+# --- extract fixed-effects estimates: fixef(mod_XXX) and 95% CI: confint(mod_XXX)
+# --- and calculate odd ratio with an exponent: exp()
+
+confint(m.final, parm = "beta_", method = "Wald") |>  
+  as_tibble(rownames = "Parameters") |>  
+  mutate(
+    Coeff = fixef(m.final)
+    ) |>  
+  relocate(Coeff, .after = Parameters) # |>  
   mutate(across(where(is.numeric), exp)
          )
 
 
-# Extract prediction from model
+ 
+# ---
+# Obtain: Extract prediction from model
 # predict(type = "response") gives us probability
 
-dat_est <- dat %>% 
-  bind_cols(predict(m_final, type = "response") %>% 
-              as_tibble()
-            ) %>% 
-  rename(Estimate = value)
+item_dat_sm_est <- item_dat_sm |> 
+  bind_cols(predict(m.final, type = "response") |> as_tibble()
+            ) |>  
+  rename(estimate = value)
 
 
-# Obtain summary of the estimate
+# --- obtain summary of the estimate
+  
+item_dat_sm_est |>  
+  group_by(Variant) |>  
+  summarize(
+    m = mean(estimate),
+    sd = sd(estimate)
+    ) |>  
+  ungroup()
 
-dat_est %>% 
-  group_by(Variant) %>% 
-  summarize(m = mean(Estimate),
-            sd = sd(Estimate)
-            ) %>% 
+item_dat_sm_est |>  
+  group_by(L1) |>  
+  summarize(
+    m = mean(estimate),
+    sd = sd(estimate)
+    ) |> 
   ungroup()
 
 
-dat_est %>% 
-  group_by(L1) %>% 
-  summarize(m = mean(Estimate),
-            sd = sd(Estimate)
-            ) %>% 
-  ungroup()
 
-
+# ---
 # Simulate prediction from the model: (type = "responses") gives us probability
 # Use bootMer to simulate prediction in order to calculate prediction interval
 
-bstrap <- lme4::bootMer(m_final, 
+set.seed(4566)
+
+bstrap <- lme4::bootMer(m.final, 
                         function(x) predict(x, type = "response"), 
                         nsim = 100, 
                         re.form = NA,
@@ -983,67 +1570,76 @@ bstrap <- lme4::bootMer(m_final,
                         )
 
 
-# bstrap is a "bootMer" object; we'll need to get predicted values from this object
+# bstrap is a "bootMer" object; we'll get predicted values from this object
 # this can be done with: $t --> bstrap$t will pull these values out
-# once we convert this into a tibble, we'll get 785 columns (which are rows in our data)
+# after converting this into a tibble, we'll get 785 columns (= rows in our data)
 
-# NOTE: We assign this object to dat_strp
+# NOTE: We assign this object to df_strp
 
-dat_strp <- left_join(dat %>%
-                        #create a column with row numbers (as characters)
-                        #facilitate joining the two tibble
-                        mutate(Rows = as.character(row_number())
+df_strp <- left_join(item_dat_sm |> 
+                       #create a column with row numbers (as characters)
+                       #facilitate joining the two tibble
+                       mutate(Rows = as.character(row_number())
                                ),
-                      bstrap$t %>% 
-                        as_tibble() %>% 
-                        #convert this tibble into a long format for joining
-                        pivot_longer(cols      = everything(),
-                                     names_to  = "Sample",
-                                     values_to = "Estimate"), 
-                      by = c("Rows" = "Sample")
-                      )
+                     bstrap$t |> 
+                       as_tibble() |>  
+                       #convert this tibble into a long format for joining
+                       pivot_longer(cols      = everything(),
+                                    names_to  = "Sample",
+                                    values_to = "Estimate"), 
+                     by = c("Rows" = "Sample")
+                     )
 
 
-# Visualize marginal effects (i.e., mean proportion of collexeme responses) 
 
-# L1s x variants interaction
+# ---
+# Understand & visualize marginal effects (mean proportion of cued responses) 
+
+# (1) -- L1s x variants interaction
 # Calculate model estimates & boostrapped CI
 
-sum_t <- dat_strp %>% 
-  group_by(L1, Variant, Rows) %>% 
-  summarize(est = mean(Estimate)
-            ) %>% 
-  ungroup() %>% 
-  group_by(L1, Variant) %>% 
-  summarize(m  = mean(est),
-            sd = sd(est),
-            se = sd/sqrt(n()),
-            low = m - qt(1 - ((1 - 0.95) / 2), n() - 1) * se,
-            up  = m + qt(1 - ((1 - 0.95) / 2), n() - 1) * se
-            ) %>% 
+sum_t <- df_strp |>  
+  group_by(L1, Variant, Rows) |>  
+  summarize(
+    est = mean(Estimate)
+    ) |>  
+  ungroup() |>  
+  group_by(L1, Variant) |>  
+  summarize(
+    m  = mean(est),
+    sd = sd(est),
+    se = sd/sqrt(n()),
+    low = m - qt(1 - ((1 - 0.95) / 2), n() - 1) * se,
+    up  = m + qt(1 - ((1 - 0.95) / 2), n() - 1) * se
+    ) |> 
   ungroup()
 
 
-sum_t %>% 
+# Plot the interaction
+
+sum_t |>  
   ggplot(aes(x = Variant, y = m, color = L1)) +
   geom_point(position = position_dodge(width = 0.3),
-             size  = 3, 
+             size  = 2, 
              shape = 15
              ) +
   geom_errorbar(aes(ymin = low, ymax = up), 
                 position = position_dodge(width = 0.3),
-                size = 1,
+                linewidth = 0.75,
                 width = 0.3
                 ) +
   scale_color_manual(values = c("#000000", "#777777"),
                      name = "Group:",
-                     labels = c("English L1", "Thai L1-English L2"),
+                     labels = c("L1 English", "L2 English"),
                      guide  = guide_legend(direction = "horizontal") 
                      ) +
   scale_x_discrete(labels = c("Adj-that", "Adj-to") ) +
-  labs(x = "Introductory-it variants", y = "Proportions of collexeme response") +
+  labs(
+    x = "Introductory-it variants", 
+    y = "Proportion of cued responses"
+    ) +
   theme_bw() +
-  theme(legend.position = c(0.34, 0.95), 
+  theme(legend.position = c(0.25, 0.93), 
         panel.grid      = element_blank(),
         text = element_text(size = 12),
         axis.text       = element_text(size = 12),
@@ -1051,344 +1647,123 @@ sum_t %>%
         legend.box.background = element_rect(colour = "black")
         )
 
-ggsave("L1_var.png", dpi = 300)
+ggsave("fig1.png", dpi = 300)
 
 rm(sum_t)
 
 
-# Visualize marginal effects (i.e., mean proportion of collexeme responses) 
 
-# variants * strength interaction
-# To begin, we create a new tibble that bins Coll_strength by quantile
+# (2) -- Variants x Delta P & variants x frequency interactions
 
-quantile(dat$Coll_strength, probs = c(0.25, 0.50, 0.75))
+inter_t1 <- df_strp |>  
+  mutate(
+    DPcw_cat = round(DPcw, digits = 1)
+    ) |>  
+  filter(DPcw_cat != 0.2) |> 
+  group_by(Variant, DPcw_cat, Rows) |>  
+  summarize(
+    est = mean(Estimate)
+    ) |> 
+  ungroup() |>  
+  group_by(Variant, DPcw_cat) |>  
+  summarize(
+    m  = mean(est),
+    total = n(),
+    sd = sd(est),
+    se = sd/sqrt(n()),
+    low = m - qt(1 - ((1 - 0.95) / 2), n() - 1) * se,
+    up  = m + qt(1 - ((1 - 0.95) / 2), n() - 1) * se
+    ) |> 
+  ungroup() 
+  
 
-dat_strp <- dat_strp %>% 
-  mutate(Coll_Str_b = case_when(Coll_strength <  1.771 ~ 1,
-                                Coll_strength >= -1.771  & Coll_strength < 14.271 ~ 2,
-                                Coll_strength >=  14.271  & Coll_strength < 201.751 ~ 3,
-                                Coll_strength >=  201.751 ~ 4)
-         )
-
-
-# Calculate summary statistics by variant and strength
-
-sum_t <- dat_strp %>% 
-  group_by(Variant, Coll_Str_b, Rows) %>% 
-  summarize(est = mean(Estimate)
-            ) %>% 
-  ungroup() %>% 
-  group_by(Variant, Coll_Str_b) %>% 
-  summarize(m  = mean(est),
-            sd = sd(est),
-            se = sd/sqrt(n()),
-            low = m - qt(1 - ((1 - 0.95) / 2), n() - 1) * se,
-            up  = m + qt(1 - ((1 - 0.95) / 2), n() - 1) * se
-            ) %>% 
-  ungroup()
-
-
-sum_t %>% 
-  ggplot(aes(x = Coll_Str_b, y = m) ) +
-  geom_line(aes(group = Variant, color = Variant)) +
-  geom_ribbon(aes(ymin = low, ymax = up, group = Variant), alpha = 0.3) +
-  annotate(geom = "text", x = 1.2, y = 0.45, label = "Adj-that") +
-  annotate(geom = "text", x = 1.2, y = 0.7, label = "Adj-to") +
-  labs(x = "Collostructional strengths", y = "Mean proportion of collexeme responses") +
-  scale_x_continuous(breaks = c(1, 2, 3, 4),
-                     labels = c("<2", "2-14", "14-202", ">202") 
-                     ) +
-  scale_color_manual(values = c("#000000", "#000000")
-                     ) +
+fig1 <- inter_t1 |>  
+  ggplot(aes(x = DPcw_cat, y = m, color = Variant)) +
+  geom_line() +
+  geom_ribbon(aes(ymin = low, ymax = up, group = Variant), alpha = 0.3, color = NA) +
+  labs(x = "DeltaP scores of adjectives given their attracting variants", y = "") +
+  scale_color_manual(values = c("#eb4034", "#365c45"),
+                     name = "Variants:",
+                     labels = c("Adj-that", "Adj-to"),
+                     guide  = guide_legend(direction = "horizontal") 
+  ) +
   theme_bw() +
-  theme(legend.position = "none", 
-        text = element_text(size = 12),
-        axis.text   = element_text(size = 12),
-        axis.text.x = element_text(size = 12, hjust = 0.8),
-        axis.title  = element_text(size = 12, face = "bold"),
-        panel.grid  = element_blank() 
+  theme(legend.position = c(0.75, 0.15), 
+        panel.grid      = element_blank(),
+        text = element_text(size = 11),
+        axis.text       = element_text(size = 11),
+        axis.title      = element_text(size = 12, face = "bold"),
+        axis.title.y   = element_blank(),
+        legend.box.background = element_rect(colour = "black")
         )
 
-ggsave("Var_strengh.png", dpi = 300)
 
-
-# Visualize marginal effects (i.e., mean proportion of collexeme responses) 
-
-# strength x variants x link verb
-# Calculate model estimates & boostrapped CI
-
-sum_t <- dat_strp %>% 
-  group_by(Variant, Link_verb, Coll_Str_b, Rows) %>% 
-  summarize(est = mean(Estimate)
-            ) %>% 
-  ungroup() %>% 
-  group_by(Variant, Link_verb, Coll_Str_b) %>% 
-  summarize(m  = mean(est),
-            sd = sd(est),
-            se = sd/sqrt(n()),
-            low = m - qt(1 - ((1 - 0.95) / 2), n() - 1) * se,
-            up  = m + qt(1 - ((1 - 0.95) / 2), n() - 1) * se
-            ) %>% 
+inter_t2 <- df_strp |> 
+  mutate(
+    freq_cat = round(freq_variant_log, digits = 0)
+    ) |>  
+  group_by(Variant, freq_cat, Rows) |>  
+  summarize(est = mean(Estimate)) |>  
+  ungroup() |>  
+  group_by(Variant, freq_cat) |>  
+  summarize(
+    m  = mean(est),
+    total = n(),
+    sd = sd(est),
+    se = sd/sqrt(n()),
+    low = m - qt(1 - ((1 - 0.95) / 2), n() - 1) * se,
+    up  = m + qt(1 - ((1 - 0.95) / 2), n() - 1) * se
+    ) |> 
   ungroup()
-  
-  
-# Plot 
-
-quantile(dat$Coll_strength, probs = c(0.25, 0.50, 0.75))
-axis <- c("<2", "2-14", "14-202", ">202")
 
 
-sum_t %>% 
-  mutate(Variant = if_else(Variant == "Adj_that", "Adj-that", "Adj-to") 
-         ) %>%  
-  ggplot(aes(x = Coll_Str_b, y = m) ) +
-  geom_line(aes(group = 1)) +
-  geom_ribbon(aes(ymin = low, ymax = up), alpha = 0.3) +
-  labs(x = "Collostructional strengths", y = "Mean proportion of collexeme responses") +
-  scale_x_continuous(breaks = c(1, 2, 3, 4),
-                     labels = c("<2", "2-14", "14-202", ">202")) +
+fig2 <- inter_t2 |>  
+  ggplot(aes(x = freq_cat, y = m, color = Variant)) +
+  geom_line() +
+  geom_ribbon(aes(ymin = low, ymax = up, group = Variant), alpha = 0.3, color = NA) +
+  labs(x = "Logged adjective frequencies in preferred variants", y = "Proportion of cued responses") +
+  scale_color_manual(values = c("#eb4034", "#365c45"),
+                     name = "Variants:",
+                     labels = c("Adj-that", "Adj-to"),
+                     guide  = guide_legend(direction = "horizontal") 
+                     ) +
   theme_bw() +
-  theme(text = element_text(size = 12),
-        axis.text   = element_text(size = 12),
-        axis.text.x = element_text(size = 12, hjust = 0.8),
-        axis.title  = element_text(size = 12, face = "bold"),
-        panel.grid  = element_blank() 
-        ) +
-  facet_grid(Link_verb ~ Variant)
-  
+  theme(legend.position = c(0.75, 0.15), 
+        panel.grid      = element_blank(),
+        text = element_text(size = 11),
+        axis.text       = element_text(size = 11),
+        axis.title      = element_text(size = 12, face = "bold"),
+        legend.box.background = element_rect(colour = "black")
+  )
 
-ggsave("Verb_variant_strength.png", dpi = 300)
 
+figure <- gridExtra::grid.arrange(fig2, fig1, ncol = 2) 
+ggsave("fig2.png", figure, dpi = 300, width = 15, height = 8)
 
-rm(sum_t)
 
-#---------------------------------------------
-# We could have used ggeffects:ggemmeans() to visualize the three-way interaction
 
-# To do so, we can specify the terms in terms = c() using variable names from the model
-# For continuous variables e.g., Coll_strength, we can get marginal effects at specified values
+# ------------------------------ RQ 2 ------------------------------ #
 
-predict_df <- ggeffects::ggemmeans(m_final, 
-                                   terms = c("Link_verb", "Variant", "Coll_Str_s [-1.5, 0, 1.5, 3, 4.5]")
-                                   )
+# Extract fixed-effects estimates: fixef(mod_XXX) and 95% CI: confint(mod_XXX)
+# And finally calculate odd ratio with an exponent: exp()
 
-# We obtain a tibble, with predicted values calculated for 1st term provided (x [Link_verb])
-# Two other columns are grouping variables (group [Variants] and facet [Strengths])
-# Rename for clarity
+confint(m.th_final, parm = "beta_", method = "Wald") |>  
+  as_tibble(rownames = "Parameters") |> 
+  mutate(
+    Coeff = fixef(m.th_final)
+    ) |>  
+  relocate(Coeff, .after = Parameters) |>  
+  mutate(
+    across(where(is.numeric), exp)
+    )
 
-predict_df <-  predict_df %>% 
-  rename(Verbs     = x,
-         Variants  = group,
-         Strengths = facet)
 
 
-# Plot (but first we create a label for x axis -- convert coll_str back to original)
+# ---
+# Obtain: Extract prediction from model
+# predict(type = "response") gives us probability
 
-xaxis <- (seq(from = -1.5, to = 4.5, by = 1.5) * sd(dca$Coll_strength)) + mean(dca$Coll_strength)
-xaxis <- round(xaxis, digits = 0)  
-  
-
-ggplot(data = predict_df, 
-       aes(x = Strengths, y = predicted, group = Variants) ) +
-  geom_line(color = "black") +
-  geom_ribbon(aes(ymin = conf.low, ymax = conf.high), 
-              alpha = 0.3 ) +
-  # scale_x_discrete(breaks = c(0, 2, 4, 6, 8),
-  #                  labels = xaxis ) +
-  labs(x = "Collostructional strengths", y = "Mean proportion of collexeme responses") +
-  theme_bw() +  
-  theme(text = element_text(size = 12),
-        axis.text  = element_text(size = 12),
-        axis.title = element_text(size = 12, face = "bold"),
-        panel.grid = element_blank() 
-        ) +
-  facet_grid(Verbs ~ Variants) 
-
-
-rm(predict_df)
-
-#---------------------------------------------
-
-
-# The item: It seems [blank] to --> As strengths increased, mean proportion went down.
-# To get a sense of what happened, we filter out responses for Adj-to from dat:
-
-probe <- left_join(dat_est %>% 
-                     filter(Variant == "Adj_to") %>% 
-                     count(Response, Link_verb, Match),
-                   dca %>% 
-                     select(Adjectives, starts_with("Coll")
-                            ), 
-                   by = c("Response" = "Adjectives")
-                   )
-
-
-dat_est %>% 
-  filter(Variant == "Adj_to") %>% 
-  group_by(Link_verb) %>% 
-  count(Match) %>% 
-  ungroup()
-  
-# Filter out highly distinctive collexemes
-
-probe %>% 
-  filter(Coll_strength > 10, Match == 0)
-
-
-# NOTE: A few observations
-# (1) high-strength adjectives supplied fewer times (e.g., difficult, hard, important, necessary)
-# (2) responses that are collexemes of *Adj-that* were supplied more often
-# more cases with match = 0 in seems (30) than is (21)
-# (2) for four adjectives--likely, obvious, unlikely, clear-- (which prefer Adj-that)
-# they are supplied in Adj-to items a greater number of times with seem than is
-
-
-
-
-# L2 proficiency (with English L2 data only)
-
-# Extract fixed-effects estimates --- with fixef(mod_XXX) --- and 95% CI ---with confint(mod_XXX)
-# And finally calculate odd ratio with an exponent -- exp --
-
-confint(m_th2, parm = "beta_", method = "Wald") %>% 
-  as_tibble(rownames = "Parameters") %>% 
-  mutate(Coeff = fixef(m_th2)
-         ) %>% 
-  relocate(Coeff, .after = Parameters) 
-
-
-# L2 proficiency was not significant
-# We checked if higher vs. lower proficiency answered "more accurately"
-
-dat_thai %>% 
-  mutate(Test_bin = if_else(TestScore > median(TestScore), "High", "Low" )
-         ) %>% 
-  group_by(Test_bin) %>% 
-  count(Match) 
-
-
-chisq.test(matrix(c(55, 85, 82, 105), nrow = 2, byrow = TRUE))
-
-
-
-
-
-
-
-
-##### Additional information: Collexeme analysis in production data #####
-
-# Obtain a full list of responses from production data
-# NOTE: we use the dataframe "product_dat" rather than the dataframe "dat" 
-#       dat consists of adjectives that were attested in the dca
-#       we'd like to conduct DCA on all adjectives supplied by participants
-
-fulldat <- produc_dat %>% 
-  filter(Past_participle == 0 & Incomplete == 0) %>% 
-  select(Variant, Response) %>% 
-  arrange(Variant)
-
-write_delim(fulldat, file = "ProductionFullList.txt", delim = "\t")
-
-
-
-# Obtain a list of responses from English L2 subjects
-
-thaidat <- produc_dat %>% 
-  filter(Past_participle == 0 & Incomplete == 0) %>% 
-  filter(L1 == "Thai") %>% 
-  select(Variant, Response) %>% 
-  arrange(Variant)
-
-write_delim(thaidat, file = "ProductionThaiList.txt", delim = "\t")
-
-
-rm(fulldat, thaidat)
-
-
-
-
-
-
-
-
-##### Additional information: Frequency or strength #####
-
-# Read DCA results into the session
-
-dca_thai <- read_delim(file = "./Data/DCA_ProductionThai.txt", delim = "\t") %>% 
-  select(!c(starts_with("Freq_exp"), starts_with("DeltaP")) 
-         )
-
-
-# Join two tibbles and filter out rows that do not exist in DCA of corpus data
-
-dca_thai <- left_join(dca_thai, 
-                     dca %>% 
-                       select(!c(starts_with("Freq_exp"), starts_with("DeltaP"),
-                                 Coll_Str_c, Coll_Str_s
-                                 )
-                              ),
-                     by = "Adjectives",
-                     suffix = c(".pro", ".cor")
-                     ) %>% 
-  filter(!is.na(Freq_raw_that.cor))
-
-
-# Correlation test 
-
-# Begin by +1 to raw frequency to prevent log(0) = inf
-# To every single word or to those words that preferences match
-
-dca_thai_cor <- dca_thai %>% 
-  # mutate(Match = if_else(Preference.pro == Preference.cor, 1, 0)
-  #        ) %>%
-  # filter(Match == 1) %>%
-  select(Adjectives, Preference.pro, starts_with("Freq_raw"), starts_with("Coll_strength")) %>% 
-  mutate(across(.cols = starts_with("Freq_raw"),
-                .fns  = ~ . + 1)
-         ) %>% 
-  mutate(across(.cols = where(is.numeric),
-                .fns  = ~log(., base = 2)
-                )
-         )
-
-
-# Log frequencies
-
-dca_thai_cor %>% 
-  filter(Preference.pro == "Adj_that") %$% 
-  cor.test(Freq_raw_that.pro, Freq_raw_that.cor)
-
-# Full set   --> Cor: r(65) = 0.594, p < 0.001
-# Match only --> Cor: r(24) = 0.578, p < 0.01
-
-
-dca_thai_cor %>% 
-  filter(Preference.pro == "Adj_to") %$% 
-  cor.test(Freq_raw_to.pro, Freq_raw_to.cor)
-
-# Full set   --> Cor: r(47) = 0.748, p < 0.001
-# Match only --> Cor: r(38)  = 0.761, p < 0.001 
-
-
-
-# Collostructional strength
-
-dca_thai_cor %>% 
-  filter(Preference.pro == "Adj_that") %$%
-  cor.test(Coll_strength.pro, Coll_strength.cor)
-
-# Full set   --> Cor: r(65) = 0.05, p = 0.663
-# Match only --> Cor: r(24) = 0.23, p = 0.241
-
-
-dca_thai_cor %>% 
-  filter(Preference.pro == "Adj_to") %$%
-  cor.test(Coll_strength.pro, Coll_strength.cor)
-
-# Full set   --> Cor: r(47) = 0.42, p = 0.002
-# Match only --> Cor: r(38) = 0.458, p = 0.002
-
-
-rm(dca_thai, dca_thai_cor)
+dat_thai_est <- dat_thai |> 
+  bind_cols(predict(m.th_final, type = "response") |> as_tibble()
+            ) |>  
+  rename(estimate = value)
